@@ -10873,6 +10873,15 @@
             {
               "property": "desaturate",
               "value": true
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\earthshield.mp3",
+                "sound_type": "Play"
+              }
             }
           ],
           "check": {
@@ -14092,6 +14101,15 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\stormkeeper.mp3",
+                "sound_type": "Play"
+              }
             }
           ],
           "check": {
@@ -22256,6 +22274,15 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\stormkeeper.mp3",
+                "sound_type": "Play"
+              }
             }
           ],
           "check": {
