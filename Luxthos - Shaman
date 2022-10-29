@@ -9679,10 +9679,21 @@
             }
           ],
           "check": {
+            "checks": [
+              {
+                "op": "==",
+                "trigger": 1,
+                "variable": "chargeGainTime"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
             "op": "==",
-            "trigger": 1,
-            "value": "0",
-            "variable": "chargeGainTime"
+            "trigger": -2,
+            "variable": "AND"
           }
         },
         {
