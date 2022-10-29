@@ -28482,7 +28482,6 @@
         }
       },
       "authorOptions": [],
-      "auto": true,
       "color": [
         1,
         1,
@@ -28575,15 +28574,13 @@
       "cooldownSwipe": true,
       "cooldownTextDisabled": false,
       "desaturate": false,
-      "displayIcon": "",
       "frameStrata": 1,
       "height": 48,
       "icon": true,
       "iconSource": -1,
       "id": "Ancestral Guidance",
       "information": {
-        "forceEvents": true,
-        "ignoreOptionsEventErrors": true
+        "forceEvents": true
       },
       "internalVersion": 59,
       "inverse": true,
@@ -28882,7 +28879,6 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
-      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
