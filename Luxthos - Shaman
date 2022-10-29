@@ -959,7 +959,7 @@
             ],
             "format": 5,
             "gradient": 1,
-            "height": 20
+            "height": 15
           },
           "mana_bar_ele_enh": {
             "color1": [
@@ -2423,18 +2423,18 @@
           "ooc": 100
         },
         "core": {
-          "height": 48,
+          "height": 50,
           "margin": 0,
           "nb_max": 8,
           "nb_min": 5,
-          "resources_position": 2,
-          "spacing": 3,
-          "width": 48
+          "resources_position": 1,
+          "spacing": 0,
+          "width": 50
         },
         "maintenance": {
           "height": 36,
-          "margin": 10,
-          "spacing": 3,
+          "margin": 0,
+          "spacing": 0,
           "width": 36
         },
         "resources": {
@@ -2452,7 +2452,7 @@
               1
             ],
             "gradient": 1,
-            "height": 20,
+            "height": 15,
             "unint_color1": [
               0.52549019607843,
               0.52549019607843,
@@ -2486,11 +2486,11 @@
           }
         },
         "side": {
-          "grow_direction": 1,
-          "height": 38,
-          "margin": 3,
-          "spacing": 3,
-          "width": 38
+          "grow_direction": 2,
+          "height": 36,
+          "margin": 0,
+          "spacing": 0,
+          "width": 36
         },
         "style": {
           "border_color": [
@@ -2506,14 +2506,14 @@
         },
         "top": {
           "height": 38,
-          "margin": 10,
-          "spacing": 3,
+          "margin": 0,
+          "spacing": 0,
           "width": 38
         },
         "utility": {
           "height": 38,
-          "margin": 10,
-          "spacing": 3,
+          "margin": 0,
+          "spacing": 0,
           "width": 38
         }
       },
@@ -9477,23 +9477,25 @@
       "config": [],
       "constantFactor": "RADIUS",
       "controlledChildren": [
-        "Riptide",
-        "Healing Stream Totem (Restoration)",
-        "Cloud Burst",
+        "Ancestral Guidance",
+        "Stormkeeper (Restoration)",
         "Earth Shield (Restoration)",
         "Unleash Life",
+        "Chain Harvest (REMOVE FOR DF)",
+        "Primordial Wave (Restoration)",
+        "Riptide",
         "Downpour",
         "Wellspring",
         "Ever-Rising Tide",
-        "Primordial Wave (Restoration)",
         "Earthen Wall Totem",
         "Healing Tide Totem",
         "Spirit Link Totem",
         "Ascendance (Restoration)",
         "Mana Tide Totem",
-        "Stormkeeper (Restoration)",
         "Stormstrike",
         "Lava Lash",
+        "Healing Stream Totem (Restoration)",
+        "Cloud Burst",
         "Flame Shock (Enhancement)",
         "Frost Shock",
         "Fire Nova",
@@ -9662,6 +9664,25 @@
             "trigger": 1,
             "value": "0",
             "variable": "charges"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\riptide.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "op": "==",
+            "trigger": 1,
+            "value": "0",
+            "variable": "chargeGainTime"
           }
         },
         {
@@ -12128,6 +12149,15 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\pwave.mp3",
+                "sound_type": "Play"
+              }
             }
           ],
           "check": {
@@ -12250,6 +12280,19 @@
             {
               "property": "sub.4.text_visible",
               "value": true
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\healingwave.mp3",
+                "sound_type": "Play"
+              }
+            },
+            {
+              "property": "iconSource",
+              "value": 0
             }
           ],
           "check": {
@@ -12282,7 +12325,7 @@
       "cooldownSwipe": true,
       "cooldownTextDisabled": false,
       "desaturate": false,
-      "displayIcon": "",
+      "displayIcon": 136043,
       "frameStrata": 1,
       "height": 48,
       "icon": true,
@@ -23470,7 +23513,18 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [],
+      "controlledChildren": [
+        "Improved Flametongue Weapon",
+        "Windfury Weapon",
+        "Flametongue Weapon",
+        "Earthliving Weapon",
+        "Lightning Shield",
+        "Water Shield",
+        "Earth Shield (Elemental & Enhancement)",
+        "Nature's Guardian",
+        "Reincarnation",
+        "Bloodlust"
+      ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowLeftSide then\n        LWA.GrowLeftSide(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
       "frameStrata": 1,
@@ -23592,7 +23646,20 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [],
+      "controlledChildren": [
+        "Capacitor Totem",
+        "Healing Stream Totem (Elemental & Enhancement)",
+        "Earthbind",
+        "Wind Rush Totem",
+        "Earthgrab Totem",
+        "Tremor Totem",
+        "Poison Cleansing Totem",
+        "Stoneskin Totem",
+        "Tranquil Air Totem",
+        "Mana Spring Totem",
+        "Windfury Totem",
+        "Ancestral Protection Totem"
+      ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowRightSide then\n        LWA.GrowRightSide(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
       "frameStrata": 1,
@@ -28414,44 +28481,8 @@
           "type": "none"
         }
       },
-      "authorOptions": [
-        {
-          "collapse": true,
-          "groupType": "simple",
-          "hideReorder": true,
-          "key": "utility",
-          "limitType": "none",
-          "name": "Utility Icons",
-          "nameSource": 0,
-          "noMerge": false,
-          "size": 10,
-          "subOptions": [
-            {
-              "noMerge": false,
-              "text": "Behavior",
-              "type": "header",
-              "useName": true,
-              "width": 1
-            },
-            {
-              "default": 1,
-              "key": "behavior",
-              "name": "Display Behavior",
-              "type": "select",
-              "useDesc": false,
-              "values": [
-                "Show on Cooldown",
-                "Always Show"
-              ],
-              "width": 1
-            }
-          ],
-          "type": "group",
-          "useCollapse": true,
-          "useDesc": false,
-          "width": 1
-        }
-      ],
+      "authorOptions": [],
+      "auto": true,
       "color": [
         1,
         1,
@@ -28468,6 +28499,15 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
+            },
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\ancestralguidance.mp3",
+                "sound_type": "Play"
+              }
             }
           ],
           "check": {
@@ -28509,7 +28549,7 @@
             },
             {
               "property": "sub.3.glowType",
-              "value": "Pixel"
+              "value": "buttonOverlay"
             },
             {
               "property": "desaturate"
@@ -28529,23 +28569,21 @@
           }
         }
       ],
-      "config": {
-        "utility": {
-          "behavior": 1
-        }
-      },
+      "config": [],
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
       "cooldownTextDisabled": false,
       "desaturate": false,
+      "displayIcon": "",
       "frameStrata": 1,
       "height": 48,
       "icon": true,
       "iconSource": -1,
       "id": "Ancestral Guidance",
       "information": {
-        "forceEvents": true
+        "forceEvents": true,
+        "ignoreOptionsEventErrors": true
       },
       "internalVersion": 59,
       "inverse": true,
@@ -28840,10 +28878,11 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Utilities - LWA - Shaman",
+      "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -28953,8 +28992,7 @@
           "untrigger": []
         },
         "activeTriggerMode": -10,
-        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
-        "disjunctive": "custom"
+        "disjunctive": "any"
       },
       "uid": "c1K5KYyl6(A",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
@@ -33575,30 +33613,7 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [
-        "Capacitor Totem",
-        "Healing Stream Totem (Elemental & Enhancement)",
-        "Earthbind",
-        "Wind Rush Totem",
-        "Earthgrab Totem",
-        "Tremor Totem",
-        "Poison Cleansing Totem",
-        "Stoneskin Totem",
-        "Tranquil Air Totem",
-        "Mana Spring Totem",
-        "Windfury Totem",
-        "Ancestral Protection Totem",
-        "Improved Flametongue Weapon",
-        "Windfury Weapon",
-        "Flametongue Weapon",
-        "Earthliving Weapon",
-        "Lightning Shield",
-        "Water Shield",
-        "Earth Shield (Elemental & Enhancement)",
-        "Nature's Guardian",
-        "Reincarnation",
-        "Bloodlust"
-      ],
+      "controlledChildren": [],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
       "customSort": "",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
@@ -34078,7 +34093,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -34642,7 +34657,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -35199,7 +35214,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -35756,7 +35771,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -36313,7 +36328,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -36871,7 +36886,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -37428,7 +37443,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -37985,7 +38000,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -38542,7 +38557,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -39099,7 +39114,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -39688,7 +39703,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -40263,7 +40278,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Right Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -40887,7 +40902,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -41522,7 +41537,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -42184,7 +42199,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -42846,7 +42861,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -43508,7 +43523,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -44157,7 +44172,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -44682,7 +44697,7 @@
         "use_spellknown": false,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -45154,7 +45169,7 @@
         "use_petbattle": false,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -45599,7 +45614,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -46123,7 +46138,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.11",
@@ -47662,11 +47677,11 @@
       "semver": "3.0.11",
       "sort": "none",
       "sortHybridTable": {
-        "Combo Point 1 - Rogue": false,
-        "Combo Point 2 - Rogue": false,
-        "Combo Point 3 - Rogue": false,
-        "Combo Point 4 - Rogue": false,
-        "Combo Point 5 - Rogue": false
+        "Maelstrom Weapon 1": false,
+        "Maelstrom Weapon 2": false,
+        "Maelstrom Weapon 3": false,
+        "Maelstrom Weapon 4": false,
+        "Maelstrom Weapon 5": false
       },
       "source": "import",
       "space": 2,
@@ -49629,11 +49644,8 @@
       "semver": "3.0.11",
       "sort": "none",
       "sortHybridTable": {
-        "Combo Point 1 - Rogue": false,
-        "Combo Point 2 - Rogue": false,
-        "Combo Point 3 - Rogue": false,
-        "Combo Point 4 - Rogue": false,
-        "Combo Point 5 - Rogue": false
+        "Lava Burst 1": false,
+        "Lava Burst 2": false
       },
       "source": "import",
       "space": 2,
@@ -51919,6 +51931,509 @@
       "xOffset": 0,
       "yOffset": 0,
       "zoom": 0.3
+    },
+    {
+      "actions": {
+        "finish": [],
+        "init": [],
+        "start": []
+      },
+      "alpha": 1,
+      "anchorFrameType": "SCREEN",
+      "anchorPoint": "CENTER",
+      "animation": {
+        "finish": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "main": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "start": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        }
+      },
+      "authorOptions": [],
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "conditions": [
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 1,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "desaturate",
+              "value": true
+            }
+          ],
+          "check": {
+            "trigger": 1,
+            "value": 1,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "color",
+              "value": [
+                0.47450980392157,
+                0.51372549019608,
+                1,
+                1
+              ]
+            },
+            {
+              "property": "desaturate",
+              "value": true
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "value": 1,
+                "variable": "insufficientResources"
+              },
+              {
+                "trigger": -1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": 1,
+            "value": 1,
+            "variable": "insufficientResources"
+          }
+        }
+      ],
+      "config": [],
+      "cooldown": true,
+      "cooldownEdge": false,
+      "cooldownSwipe": true,
+      "cooldownTextDisabled": false,
+      "desaturate": false,
+      "frameStrata": 1,
+      "height": 48,
+      "icon": true,
+      "iconSource": -1,
+      "id": "Chain Harvest (REMOVE FOR DF)",
+      "information": {
+        "forceEvents": true
+      },
+      "internalVersion": 59,
+      "inverse": true,
+      "keepAspectRatio": true,
+      "load": {
+        "class": {
+          "multi": [],
+          "single": "SHAMAN"
+        },
+        "class_and_spec": {
+          "multi": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            true,
+            true,
+            true
+          ],
+          "single": 263
+        },
+        "size": {
+          "multi": []
+        },
+        "spec": {
+          "multi": [],
+          "single": 3
+        },
+        "spellknown": 320674,
+        "talent": {
+          "multi": []
+        },
+        "use_class": true,
+        "use_class_and_spec": false,
+        "use_never": false,
+        "use_petbattle": false,
+        "use_spec": true,
+        "use_spellknown": true,
+        "use_vehicleUi": false
+      },
+      "parent": "Core - LWA - Shaman",
+      "regionType": "icon",
+      "selfPoint": "CENTER",
+      "semver": "3.0.11",
+      "source": "import",
+      "subRegions": [
+        {
+          "type": "subbackground"
+        },
+        {
+          "border_color": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "border_edge": "Square Full White",
+          "border_offset": 0,
+          "border_size": 2,
+          "border_visible": true,
+          "type": "subborder"
+        },
+        {
+          "glow": false,
+          "glowBorder": false,
+          "glowColor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "glowFrequency": 0.25,
+          "glowLength": 10,
+          "glowLines": 8,
+          "glowScale": 1,
+          "glowThickness": 1,
+          "glowType": "buttonOverlay",
+          "glowXOffset": 0,
+          "glowYOffset": 0,
+          "type": "subglow",
+          "useGlowColor": false
+        }
+      ],
+      "tocversion": 100002,
+      "triggers": {
+        "1": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Chain Harvest",
+            "spellIds": [],
+            "spellName": 320674,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unit": "player",
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10
+      },
+      "uid": "K5gNju3JISo",
+      "url": "https://wago.io/LuxthosShamanDragonflight/51",
+      "useCooldownModRate": true,
+      "version": 51,
+      "wagoID": "Hkc9ktj4X",
+      "width": 48,
+      "xOffset": 0,
+      "yOffset": 0,
+      "zoom": 0.3
     }
   ],
   "d": {
@@ -51983,7 +52498,7 @@
       "Resources - LWA - Shaman"
     ],
     "desc": "Made by Luxthos - twitch.tv/luxthos",
-    "frameStrata": 2,
+    "frameStrata": 1,
     "groupIcon": "interface/icons/classicon_shaman.blp",
     "id": "Luxthos - Shaman",
     "information": {
@@ -52005,7 +52520,7 @@
       }
     },
     "regionType": "group",
-    "scale": 1,
+    "scale": 1.2,
     "selfPoint": "CENTER",
     "semver": "3.0.11",
     "source": "import",
@@ -52031,7 +52546,7 @@
     "version": 51,
     "wagoID": "Hkc9ktj4X",
     "xOffset": 0,
-    "yOffset": -170
+    "yOffset": -142
   },
   "m": "d",
   "s": "5.0.5",
