@@ -12393,6 +12393,12 @@
                 "trigger": -1,
                 "value": 1,
                 "variable": "incombat"
+              },
+              {
+                "op": "==",
+                "trigger": 2,
+                "value": "0",
+                "variable": "chargeGainTime"
               }
             ],
             "trigger": -2,
