@@ -2487,10 +2487,10 @@
         },
         "side": {
           "grow_direction": 1,
-          "height": 36,
+          "height": 38,
           "margin": 3,
           "spacing": 3,
-          "width": 36
+          "width": 38
         },
         "style": {
           "border_color": [
@@ -9502,7 +9502,7 @@
         "Elemental Blast (Enhancement)",
         "Crash Lightning",
         "Sundering",
-        "Primordial Wave - Enhancement",
+        "Primordial Wave (Enhancement)",
         "Doom Winds",
         "Feral Spirit",
         "Ascendance (Enhancement)",
@@ -17616,7 +17616,7 @@
             }
           ],
           "check": {
-            "trigger": 2,
+            "trigger": 3,
             "value": 0,
             "variable": "onCooldown"
           }
@@ -17641,7 +17641,7 @@
             }
           ],
           "check": {
-            "trigger": 2,
+            "trigger": 3,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -17651,8 +17651,8 @@
             {
               "property": "color",
               "value": [
-                0.47450983524323,
-                0.5137255191803,
+                0.47450980392157,
+                0.51372549019608,
                 1,
                 1
               ]
@@ -17673,7 +17673,7 @@
                 "variable": "incombat"
               }
             ],
-            "trigger": 2,
+            "trigger": 3,
             "value": 1,
             "variable": "insufficientResources"
           }
@@ -17703,9 +17703,49 @@
             }
           ],
           "check": {
+            "trigger": 2,
+            "value": 1,
+            "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "inverse",
+              "value": true
+            },
+            {
+              "property": "cooldownEdge"
+            }
+          ],
+          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.4.text_visible",
+              "value": true
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 1,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
@@ -17824,15 +17864,22 @@
           ],
           "text_shadowXOffset": 0,
           "text_shadowYOffset": 0,
-          "text_text": "%3.s",
+          "text_text": "%2.p",
+          "text_text_format_2.p_format": "timed",
+          "text_text_format_2.p_time_dynamic_threshold": 0,
+          "text_text_format_2.p_time_format": 0,
+          "text_text_format_2.p_time_legacy_floor": false,
+          "text_text_format_2.p_time_mod_rate": true,
+          "text_text_format_2.p_time_precision": 1,
           "text_text_format_2.s_format": "none",
           "text_text_format_3.s_format": "none",
+          "text_text_format_4.s_format": "none",
           "text_text_format_p_format": "timed",
           "text_text_format_p_time_dynamic_threshold": 60,
           "text_text_format_p_time_format": 0,
           "text_text_format_p_time_precision": 1,
           "text_text_format_s_format": "none",
-          "text_visible": true,
+          "text_visible": false,
           "text_wordWrap": "WordWrap",
           "type": "subtext"
         }
@@ -17840,6 +17887,30 @@
       "tocversion": 100002,
       "triggers": {
         "1": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showOnReady",
+            "names": [],
+            "realSpellName": "Crash Lightning",
+            "spellIds": [],
+            "spellName": 187874,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unit": "player",
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": []
+        },
+        "2": {
           "trigger": {
             "auranames": [
               "187878"
@@ -17857,7 +17928,7 @@
           },
           "untrigger": []
         },
-        "2": {
+        "3": {
           "trigger": {
             "debuffType": "HELPFUL",
             "event": "Cooldown Progress (Spell)",
@@ -17878,19 +17949,6 @@
             "use_spellName": true,
             "use_track": true,
             "use_unit": true
-          },
-          "untrigger": []
-        },
-        "3": {
-          "trigger": {
-            "auranames": [
-              "333964"
-            ],
-            "debuffType": "HELPFUL",
-            "ownOnly": true,
-            "type": "aura2",
-            "unit": "player",
-            "useName": true
           },
           "untrigger": []
         },
@@ -18332,7 +18390,7 @@
       "height": 48,
       "icon": true,
       "iconSource": -1,
-      "id": "Primordial Wave - Enhancement",
+      "id": "Primordial Wave (Enhancement)",
       "information": {
         "forceEvents": true,
         "ignoreOptionsEventErrors": true
@@ -20213,6 +20271,39 @@
         {
           "changes": [
             {
+              "property": "color",
+              "value": [
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "property": "desaturate",
+              "value": false
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": 6,
+                "value": 0,
+                "variable": "insufficientResources"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "sub.3.glow",
               "value": true
             },
@@ -20468,6 +20559,30 @@
             "use_genericShowOn": true,
             "use_spellName": true,
             "use_track": true
+          },
+          "untrigger": []
+        },
+        "6": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Earthquake",
+            "spellIds": [],
+            "spellName": 61882,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unit": "player",
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
           },
           "untrigger": []
         },
@@ -39232,6 +39347,34 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow",
+              "value": true
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": 4,
+                "value": 1,
+                "variable": "show"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -39677,8 +39820,22 @@
             "genericShowOn": "showOnCooldown"
           }
         },
+        "4": {
+          "trigger": {
+            "auranames": [
+              "327942"
+            ],
+            "debuffType": "HELPFUL",
+            "matchesShowOn": "showOnMissing",
+            "type": "aura2",
+            "unit": "player",
+            "useName": true
+          },
+          "untrigger": []
+        },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    return t[1] or t[2]\nend",
+        "disjunctive": "custom"
       },
       "uid": "99qYAMXeAuj",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
