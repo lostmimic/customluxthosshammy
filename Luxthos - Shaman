@@ -28524,15 +28524,6 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
-            },
-            {
-              "property": "sound",
-              "value": {
-                "sound": " custom",
-                "sound_channel": "Master",
-                "sound_path": "Interface\\Sounds\\ancestralguidance.mp3",
-                "sound_type": "Play"
-              }
             }
           ],
           "check": {
@@ -28591,6 +28582,35 @@
             "trigger": 1,
             "value": 1,
             "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\ancestralguidance.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 0,
+                "variable": "onCooldown"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
