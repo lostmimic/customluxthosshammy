@@ -10873,15 +10873,6 @@
             {
               "property": "desaturate",
               "value": true
-            },
-            {
-              "property": "sound",
-              "value": {
-                "sound": " custom",
-                "sound_channel": "Master",
-                "sound_path": "Interface\\Sounds\\earthshield.mp3",
-                "sound_type": "Play"
-              }
             }
           ],
           "check": {
@@ -10919,6 +10910,36 @@
             "trigger": 1,
             "value": "1",
             "variable": "matchCount"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\earthshield.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "op": "==",
+                "trigger": 1,
+                "value": "0",
+                "variable": "matchCount"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
@@ -12158,15 +12179,6 @@
             {
               "property": "sub.3.glowType",
               "value": "buttonOverlay"
-            },
-            {
-              "property": "sound",
-              "value": {
-                "sound": " custom",
-                "sound_channel": "Master",
-                "sound_path": "Interface\\Sounds\\pwave.mp3",
-                "sound_type": "Play"
-              }
             }
           ],
           "check": {
@@ -12291,15 +12303,6 @@
               "value": true
             },
             {
-              "property": "sound",
-              "value": {
-                "sound": " custom",
-                "sound_channel": "Master",
-                "sound_path": "Interface\\Sounds\\healingwave.mp3",
-                "sound_type": "Play"
-              }
-            },
-            {
               "property": "iconSource",
               "value": 0
             }
@@ -12325,6 +12328,64 @@
             "trigger": 3,
             "value": 1,
             "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\healingwave.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 1,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\pwave.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 0,
+                "variable": "onCooldown"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
