@@ -9669,37 +9669,6 @@
         {
           "changes": [
             {
-              "property": "sound",
-              "value": {
-                "sound": " custom",
-                "sound_channel": "Master",
-                "sound_path": "Interface\\Sounds\\riptide.mp3",
-                "sound_type": "Play"
-              }
-            }
-          ],
-          "check": {
-            "checks": [
-              {
-                "op": "==",
-                "trigger": 1,
-                "value": "0.1",
-                "variable": "chargeGainTime"
-              },
-              {
-                "trigger": -1,
-                "value": 1,
-                "variable": "incombat"
-              }
-            ],
-            "op": "==",
-            "trigger": -2,
-            "variable": "AND"
-          }
-        },
-        {
-          "changes": [
-            {
               "property": "desaturate",
               "value": false
             },
@@ -9767,6 +9736,37 @@
             "trigger": 1,
             "value": 1,
             "variable": "insufficientResources"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\riptide.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "op": "==",
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "op": "==",
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
@@ -9923,7 +9923,24 @@
           },
           "untrigger": []
         },
-        "activeTriggerMode": -10
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Riptide",
+            "spellName": 61295,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
       },
       "uid": "F1OBy2nCK94",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
@@ -12431,20 +12448,14 @@
           "check": {
             "checks": [
               {
-                "trigger": 2,
-                "value": 0,
-                "variable": "onCooldown"
+                "trigger": 4,
+                "value": 1,
+                "variable": "show"
               },
               {
                 "trigger": -1,
                 "value": 1,
                 "variable": "incombat"
-              },
-              {
-                "op": "==",
-                "trigger": 2,
-                "value": "0",
-                "variable": "chargeGainTime"
               }
             ],
             "trigger": -2,
@@ -12654,6 +12665,22 @@
             "use_spellName": true,
             "use_track": true,
             "use_unit": true
+          },
+          "untrigger": []
+        },
+        "4": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Primordial Wave",
+            "spellName": 375982,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
           },
           "untrigger": []
         },
@@ -22733,27 +22760,16 @@
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "event": "Cooldown Progress (Spell)",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Stormkeeper",
-            "remaining": "0.5",
-            "remaining_operator": "<",
-            "spellIds": [],
             "spellName": 191634,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
             "unit": "player",
-            "use_absorbHealMode": true,
-            "use_absorbMode": true,
             "use_genericShowOn": true,
-            "use_remaining": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
           "untrigger": []
         },
@@ -52733,7 +52749,8 @@
           },
           "untrigger": []
         },
-        "activeTriggerMode": -10
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
       },
       "uid": "K5gNju3JISo",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
