@@ -11594,6 +11594,35 @@
             "value": 1,
             "variable": "insufficientResources"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\downpour.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -11708,7 +11737,24 @@
           },
           "untrigger": []
         },
-        "activeTriggerMode": -10
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Downpour",
+            "spellName": 207778,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
       },
       "uid": "xo(DqS95rlr",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
