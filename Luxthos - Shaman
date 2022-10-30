@@ -11830,6 +11830,35 @@
             "value": 1,
             "variable": "insufficientResources"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\wellspring.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 2,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -11944,7 +11973,25 @@
           },
           "untrigger": []
         },
-        "activeTriggerMode": -10
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Wellspring",
+            "spellName": 197995,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
       },
       "uid": "7C55R0Idb4S",
       "url": "https://wago.io/LuxthosShamanDragonflight/51",
@@ -12841,6 +12888,35 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\earthenwall.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -12999,6 +13075,23 @@
             "genericShowOn": "showOnCooldown"
           }
         },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Earthen Wall Totem",
+            "spellName": 198838,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
         "activeTriggerMode": -10,
         "disjunctive": "any"
       },
@@ -13155,6 +13248,35 @@
             "trigger": 1,
             "value": 1,
             "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\healingtide.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
@@ -13314,6 +13436,23 @@
             "genericShowOn": "showOnCooldown"
           }
         },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Healing Tide Totem",
+            "spellName": 108280,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
         "activeTriggerMode": -10,
         "disjunctive": "any"
       },
@@ -13471,6 +13610,35 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\spiritlink.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -13627,6 +13795,26 @@
             "genericShowOn": "showOnCooldown"
           }
         },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Spirit Link Totem",
+            "spellName": 98008,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
+      },
         "activeTriggerMode": -10,
         "disjunctive": "any"
       },
@@ -13744,6 +13932,35 @@
             "trigger": 1,
             "value": 1,
             "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\ascendance.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
           }
         }
       ],
@@ -13874,6 +14091,23 @@
             "use_spellName": true,
             "use_track": true,
             "use_unit": true
+          },
+          "untrigger": []
+        },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Ascendance",
+            "spellName": 114050,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
           },
           "untrigger": []
         },
@@ -14034,6 +14268,35 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\manatide.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -14192,6 +14455,26 @@
             "genericShowOn": "showOnCooldown"
           }
         },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Mana Tide Totem",
+            "spellName": 16191,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
+      },
         "activeTriggerMode": -10,
         "disjunctive": "any"
       },
@@ -19438,6 +19721,35 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\ascendance.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -19567,6 +19879,23 @@
             "use_spellName": true,
             "use_track": true,
             "use_unit": true
+          },
+          "untrigger": []
+        },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Ascendance",
+            "spellName": 114050,
+            "type": "spell",
+            "unit": "player",
+            "use_debuffClass": true,
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
           },
           "untrigger": []
         },
@@ -22891,6 +23220,35 @@
             "value": 1,
             "variable": "show"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\ascendance.mp3",
+                "sound_type": "Play"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
         }
       ],
       "config": [],
@@ -23023,6 +23381,23 @@
           },
           "untrigger": []
         },
+        "3": {
+            "trigger": {
+              "debuffType": "HELPFUL",
+              "duration": "0.1",
+              "event": "Cooldown Ready (Spell)",
+              "genericShowOn": "showOnCooldown",
+              "realSpellName": "Ascendance",
+              "spellName": 114050,
+              "type": "spell",
+              "unit": "player",
+              "use_debuffClass": true,
+              "use_genericShowOn": true,
+              "use_spellName": true,
+              "use_track": true
+            },
+            "untrigger": []
+          },
         "activeTriggerMode": -10,
         "disjunctive": "any"
       },
