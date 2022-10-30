@@ -11293,20 +11293,14 @@
           "check": {
             "checks": [
               {
-                "trigger": 2,
-                "value": 0,
-                "variable": "onCooldown"
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
               },
               {
                 "trigger": -1,
                 "value": 1,
                 "variable": "incombat"
-              },
-              {
-                "op": "==",
-                "trigger": 2,
-                "value": "0.1",
-                "variable": "chargeGainTime"
               }
             ],
             "trigger": -2,
@@ -11441,6 +11435,22 @@
             "use_spellName": true,
             "use_track": true,
             "use_unit": true
+          },
+          "untrigger": []
+        },
+        "3": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "realSpellName": "Unleash Life",
+            "spellName": 73685,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
           },
           "untrigger": []
         },
@@ -14745,27 +14755,16 @@
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "event": "Cooldown Progress (Spell)",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Stormkeeper",
-            "remaining": "0.5",
-            "remaining_operator": "<",
-            "spellIds": [],
             "spellName": 191634,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
             "unit": "player",
-            "use_absorbHealMode": true,
-            "use_absorbMode": true,
             "use_genericShowOn": true,
-            "use_remaining": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
           "untrigger": []
         },
@@ -29244,28 +29243,16 @@
         "4": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "event": "Cooldown Progress (Spell)",
+            "duration": "0.1",
+            "event": "Cooldown Ready (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Ancestral Guidance",
-            "remaining": "0.5",
-            "remaining_operator": "<",
-            "spellIds": [],
             "spellName": 108281,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
             "unit": "player",
-            "use_absorbHealMode": true,
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
             "use_genericShowOn": true,
-            "use_remaining": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
           "untrigger": []
         },
@@ -52733,27 +52720,16 @@
         "2": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "duration": "1",
+            "duration": "0.1",
             "event": "Cooldown Ready (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Chain Harvest",
-            "remaining": "1",
-            "spellIds": [],
             "spellName": 320674,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
             "unit": "player",
-            "use_absorbHealMode": true,
-            "use_absorbMode": true,
             "use_genericShowOn": true,
-            "use_remaining": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
           "untrigger": []
         },
