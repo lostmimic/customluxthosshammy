@@ -48183,7 +48183,78 @@
         0.82745098039216,
         1
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound": " custom",
+                "sound_channel": "Master",
+                "sound_path": "Interface\\Sounds\\lowmana.mp3",
+                "sound_repeat": 10,
+                "sound_type": "Loop"
+              }
+            },
+            {
+              "property": "backgroundColor",
+              "value": [
+                1,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "op": "<",
+                "trigger": 1,
+                "value": "25",
+                "variable": "percentpower"
+              },
+              {
+                "trigger": -1,
+                "value": 1,
+                "variable": "incombat"
+              }
+            ],
+            "op": "<",
+            "trigger": -2,
+            "variable": "AND"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sound",
+              "value": {
+                "sound_type": "Stop"
+              }
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "op": ">",
+                "trigger": 1,
+                "value": "25",
+                "variable": "percentpower"
+              },
+              {
+                "trigger": -1,
+                "value": 0,
+                "variable": "incombat"
+              }
+            ],
+            "op": ">",
+            "trigger": -2,
+            "variable": "OR"
+          },
+          "linked": true
+        }
+      ],
       "config": [],
       "configGroup": "mana_bar",
       "customText": "function()\n    local s = aura_env.state\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.UpdateBarText then\n        local format = LWA.GetConfig(\"resources\").mana_bar.format\n        \n        return LWA.UpdateBarText(s.value, s.percentpower, format)\n    end\n    \n    return s.percentpower .. \"%\"\nend",
