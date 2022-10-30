@@ -48315,10 +48315,10 @@
       "overlayclip": true,
       "overlays": [
         [
+          0.48627454042435,
           0,
           0,
-          0,
-          0.40000003576279
+          1
         ]
       ],
       "parent": "Resources - LWA - Shaman",
