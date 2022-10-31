@@ -36026,129 +36026,6 @@
     {
       "actions": {
         "finish": [],
-        "init": [],
-        "start": []
-      },
-      "align": "CENTER",
-      "anchorFrameFrame": "WeakAuras:Utilities - LWA - Shaman",
-      "anchorFrameParent": false,
-      "anchorFrameType": "SELECTFRAME",
-      "anchorPoint": "BOTTOM",
-      "animate": false,
-      "animation": {
-        "finish": {
-          "duration_type": "seconds",
-          "easeStrength": 3,
-          "easeType": "none",
-          "type": "none"
-        },
-        "main": {
-          "duration_type": "seconds",
-          "easeStrength": 3,
-          "easeType": "none",
-          "type": "none"
-        },
-        "start": {
-          "duration_type": "seconds",
-          "easeStrength": 3,
-          "easeType": "none",
-          "type": "none"
-        }
-      },
-      "arcLength": 360,
-      "authorOptions": [],
-      "backdropColor": [
-        1,
-        1,
-        1,
-        0.5
-      ],
-      "border": false,
-      "borderBackdrop": "Blizzard Tooltip",
-      "borderColor": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "borderEdge": "Square Full White",
-      "borderInset": 1,
-      "borderOffset": 4,
-      "borderSize": 2,
-      "columnSpace": 1,
-      "conditions": [],
-      "config": [],
-      "constantFactor": "RADIUS",
-      "controlledChildren": [],
-      "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
-      "customSort": "",
-      "desc": "Made by Luxthos - twitch.tv/luxthos",
-      "frameStrata": 1,
-      "fullCircle": true,
-      "gridType": "RD",
-      "gridWidth": 5,
-      "grow": "CUSTOM",
-      "id": "Maintenance - LWA - Shaman",
-      "information": {
-        "forceEvents": true
-      },
-      "internalVersion": 59,
-      "limit": 5,
-      "load": {
-        "class": {
-          "multi": []
-        },
-        "size": {
-          "multi": []
-        },
-        "spec": {
-          "multi": []
-        },
-        "talent": {
-          "multi": []
-        }
-      },
-      "parent": "Luxthos - Shaman",
-      "radius": 200,
-      "regionType": "dynamicgroup",
-      "rotation": 0,
-      "rowSpace": 1,
-      "scale": 1,
-      "selfPoint": "TOP",
-      "semver": "3.0.12",
-      "sort": "none",
-      "sortHybridTable": [],
-      "source": "import",
-      "space": 2,
-      "stagger": 0,
-      "subRegions": [],
-      "tocversion": 100002,
-      "triggers": [
-        {
-          "trigger": {
-            "debuffType": "HELPFUL",
-            "event": "Health",
-            "names": [],
-            "spellIds": [],
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "aura2",
-            "unit": "player"
-          },
-          "untrigger": []
-        }
-      ],
-      "uid": "EGzMxLejNbm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/52",
-      "useLimit": false,
-      "version": 52,
-      "wagoID": "Hkc9ktj4X",
-      "xOffset": 0,
-      "yOffset": 0
-    },
-    {
-      "actions": {
-        "finish": [],
         "init": {
           "custom": "aura_env.texture = 135127",
           "do_custom": true
@@ -40051,6 +39928,129 @@
       "xOffset": 0,
       "yOffset": 0,
       "zoom": 0.3
+    },
+    {
+      "actions": {
+        "finish": [],
+        "init": [],
+        "start": []
+      },
+      "align": "CENTER",
+      "anchorFrameFrame": "WeakAuras:Utilities - LWA - Shaman",
+      "anchorFrameParent": false,
+      "anchorFrameType": "SELECTFRAME",
+      "anchorPoint": "BOTTOM",
+      "animate": false,
+      "animation": {
+        "finish": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "main": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "start": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        }
+      },
+      "arcLength": 360,
+      "authorOptions": [],
+      "backdropColor": [
+        1,
+        1,
+        1,
+        0.5
+      ],
+      "border": false,
+      "borderBackdrop": "Blizzard Tooltip",
+      "borderColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "borderEdge": "Square Full White",
+      "borderInset": 1,
+      "borderOffset": 4,
+      "borderSize": 2,
+      "columnSpace": 1,
+      "conditions": [],
+      "config": [],
+      "constantFactor": "RADIUS",
+      "controlledChildren": [],
+      "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
+      "customSort": "",
+      "desc": "Made by Luxthos - twitch.tv/luxthos",
+      "frameStrata": 1,
+      "fullCircle": true,
+      "gridType": "RD",
+      "gridWidth": 5,
+      "grow": "CUSTOM",
+      "id": "Maintenance - LWA - Shaman",
+      "information": {
+        "forceEvents": true
+      },
+      "internalVersion": 59,
+      "limit": 5,
+      "load": {
+        "class": {
+          "multi": []
+        },
+        "size": {
+          "multi": []
+        },
+        "spec": {
+          "multi": []
+        },
+        "talent": {
+          "multi": []
+        }
+      },
+      "parent": "Luxthos - Shaman",
+      "radius": 200,
+      "regionType": "dynamicgroup",
+      "rotation": 0,
+      "rowSpace": 1,
+      "scale": 1,
+      "selfPoint": "TOP",
+      "semver": "3.0.12",
+      "sort": "none",
+      "sortHybridTable": [],
+      "source": "import",
+      "space": 2,
+      "stagger": 0,
+      "subRegions": [],
+      "tocversion": 100002,
+      "triggers": [
+        {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Health",
+            "names": [],
+            "spellIds": [],
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "type": "aura2",
+            "unit": "player"
+          },
+          "untrigger": []
+        }
+      ],
+      "uid": "EGzMxLejNbm",
+      "url": "https://wago.io/LuxthosShamanDragonflight/52",
+      "useLimit": false,
+      "version": 52,
+      "wagoID": "Hkc9ktj4X",
+      "xOffset": 0,
+      "yOffset": 0
     },
     {
       "actions": {
