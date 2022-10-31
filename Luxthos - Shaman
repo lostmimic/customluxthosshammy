@@ -39179,7 +39179,8 @@
         "Earth Shield (Elemental & Enhancement)",
         "Nature's Guardian",
         "Reincarnation",
-        "Bloodlust"
+        "Bloodlust",
+        "Heroism"
       ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
       "customSort": "",
@@ -46213,6 +46214,630 @@
         "disjunctive": "any"
       },
       "uid": "gIcAcd)Uk8O",
+      "url": "https://wago.io/LuxthosShamanDragonflight/52",
+      "useCooldownModRate": true,
+      "version": 52,
+      "wagoID": "Hkc9ktj4X",
+      "width": 48,
+      "xOffset": 0,
+      "yOffset": 0,
+      "zoom": 0.3
+    },
+    {
+      "actions": {
+        "finish": [],
+        "init": [],
+        "start": []
+      },
+      "alpha": 1,
+      "anchorFrameType": "SCREEN",
+      "anchorPoint": "CENTER",
+      "animation": {
+        "finish": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "main": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        },
+        "start": {
+          "duration_type": "seconds",
+          "easeStrength": 3,
+          "easeType": "none",
+          "type": "none"
+        }
+      },
+      "authorOptions": [],
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "conditions": [
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "desaturate",
+              "value": true
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 1,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "color",
+              "value": [
+                0.47450983524323,
+                0.5137255191803,
+                1,
+                1
+              ]
+            },
+            {
+              "property": "desaturate",
+              "value": true
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "value": 1,
+                "variable": "insufficientResources"
+              },
+              {
+                "trigger": -1,
+                "variable": "incombat"
+              }
+            ],
+            "trigger": 2,
+            "value": 1,
+            "variable": "insufficientResources"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow",
+              "value": true
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "Pixel"
+            },
+            {
+              "property": "desaturate"
+            },
+            {
+              "property": "inverse"
+            },
+            {
+              "property": "cooldownEdge",
+              "value": true
+            }
+          ],
+          "check": {
+            "trigger": 1,
+            "value": 1,
+            "variable": "show"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow",
+              "value": true
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "Pixel"
+            },
+            {
+              "property": "sub.3.glowColor",
+              "value": [
+                1,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "property": "sub.3.useGlowColor",
+              "value": true
+            },
+            {
+              "property": "desaturate",
+              "value": true
+            }
+          ],
+          "check": {
+            "checks": [
+              {
+                "trigger": 1,
+                "value": 0,
+                "variable": "show"
+              },
+              {
+                "trigger": 2,
+                "value": 0,
+                "variable": "onCooldown"
+              },
+              {
+                "trigger": 3,
+                "value": 1,
+                "variable": "show"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
+        }
+      ],
+      "config": [],
+      "cooldown": true,
+      "cooldownEdge": false,
+      "cooldownSwipe": true,
+      "cooldownTextDisabled": false,
+      "desaturate": false,
+      "frameStrata": 1,
+      "height": 48,
+      "icon": true,
+      "iconSource": -1,
+      "id": "Heroism",
+      "information": {
+        "forceEvents": true
+      },
+      "internalVersion": 59,
+      "inverse": true,
+      "keepAspectRatio": true,
+      "load": {
+        "class": {
+          "multi": [],
+          "single": "SHAMAN"
+        },
+        "class_and_spec": {
+          "multi": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            true,
+            true,
+            true
+          ]
+        },
+        "size": {
+          "multi": []
+        },
+        "spec": {
+          "multi": []
+        },
+        "spellknown": 32182,
+        "talent": {
+          "multi": []
+        },
+        "use_class": true,
+        "use_class_and_spec": false,
+        "use_never": false,
+        "use_petbattle": false,
+        "use_spellknown": true,
+        "use_vehicleUi": false
+      },
+      "parent": "Maintenance - LWA - Shaman",
+      "regionType": "icon",
+      "selfPoint": "CENTER",
+      "semver": "3.0.12",
+      "subRegions": [
+        {
+          "type": "subbackground"
+        },
+        {
+          "border_color": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "border_edge": "Square Full White",
+          "border_offset": 0,
+          "border_size": 2,
+          "border_visible": true,
+          "type": "subborder"
+        },
+        {
+          "glow": false,
+          "glowBorder": false,
+          "glowColor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "glowFrequency": 0.25,
+          "glowLength": 10,
+          "glowLines": 8,
+          "glowScale": 1,
+          "glowThickness": 1,
+          "glowType": "buttonOverlay",
+          "glowXOffset": 0,
+          "glowYOffset": 0,
+          "type": "subglow",
+          "useGlowColor": false
+        }
+      ],
+      "tocversion": 100002,
+      "triggers": {
+        "1": {
+          "trigger": {
+            "auranames": [
+              "32182"
+            ],
+            "debuffType": "HELPFUL",
+            "event": "Health",
+            "names": [],
+            "ownOnly": true,
+            "spellIds": [],
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "type": "aura2",
+            "unit": "player",
+            "useName": true
+          },
+          "untrigger": []
+        },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "names": [],
+            "realSpellName": "Heroism",
+            "spellIds": [],
+            "spellName": 32182,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unit": "player",
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": []
+        },
+        "3": {
+          "trigger": {
+            "auranames": [
+              "57723"
+            ],
+            "debuffType": "HARMFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showOnCooldown",
+            "names": [],
+            "realSpellName": "Heroism",
+            "spellIds": [],
+            "spellName": 32182,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "aura2",
+            "unit": "player",
+            "useExactSpellId": false,
+            "useName": true,
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": []
+        },
+        "activeTriggerMode": -10,
+        "disjunctive": "any"
+      },
+      "uid": "hLr752KNL)I",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
       "useCooldownModRate": true,
       "version": 52,
