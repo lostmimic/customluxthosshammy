@@ -24512,7 +24512,7 @@
         "Feral Lunge",
         "Gust of Wind",
         "Spirit Walk",
-        "Nature's Swiftness",
+        "Nature's Swiftness (Shaman)",
         "Totemic Recall",
         "Totemic Projection"
       ],
@@ -34537,7 +34537,7 @@
       "height": 48,
       "icon": true,
       "iconSource": -1,
-      "id": "Nature's Swiftness",
+      "id": "Nature's Swiftness (Shaman)",
       "information": {
         "forceEvents": true
       },
