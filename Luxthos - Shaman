@@ -2487,7 +2487,7 @@
         },
         "side": {
           "grow_direction": 2,
-          "height": 36,
+          "height": 38,
           "margin": 0,
           "spacing": 0,
           "width": 36
@@ -24227,19 +24227,7 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [
-        "Improved Flametongue Weapon",
-        "Windfury Weapon",
-        "Flametongue Weapon",
-        "Earthliving Weapon",
-        "Lightning Shield",
-        "Water Shield",
-        "Earth Shield (Elemental & Enhancement)",
-        "Nature's Guardian",
-        "Reincarnation",
-        "Bloodlust",
-        "Heroism"
-      ],
+      "controlledChildren": [],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowLeftSide then\n        LWA.GrowLeftSide(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
       "frameStrata": 1,
@@ -24361,20 +24349,7 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [
-        "Capacitor Totem",
-        "Healing Stream Totem (Elemental & Enhancement)",
-        "Earthbind",
-        "Wind Rush Totem",
-        "Earthgrab Totem",
-        "Tremor Totem",
-        "Poison Cleansing Totem",
-        "Stoneskin Totem",
-        "Tranquil Air Totem",
-        "Mana Spring Totem",
-        "Windfury Totem",
-        "Ancestral Protection Totem"
-      ],
+      "controlledChildren": [],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowRightSide then\n        LWA.GrowRightSide(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
       "frameStrata": 1,
@@ -24505,6 +24480,9 @@
         "Lightning Lasso",
         "Thunderstorm",
         "Hex",
+        "Capacitor Totem",
+        "Earthbind",
+        "Earthgrab Totem",
         "Greater Purge",
         "Astral Shift",
         "Earth Elemental",
@@ -24514,7 +24492,14 @@
         "Spirit Walk",
         "Nature's Swiftness (Shaman)",
         "Totemic Recall",
-        "Totemic Projection"
+        "Totemic Projection",
+        "Healing Stream Totem (Elemental & Enhancement)",
+        "Wind Rush Totem",
+        "Tremor Totem",
+        "Poison Cleansing Totem",
+        "Stoneskin Totem",
+        "Tranquil Air Totem",
+        "Ancestral Protection Totem"
       ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowUtilities then\n        LWA.GrowUtilities(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
@@ -28032,7 +28017,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -28043,12 +28065,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -28075,34 +28126,11 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
-        },
+        }
         {
           "changes": [
             {
@@ -28133,7 +28161,11 @@
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -28441,7 +28473,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -28487,30 +28519,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Capacitor Totem",
-            "spellIds": [],
-            "spellName": 192058,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_absorbHealMode": true,
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -28548,33 +28556,35 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "realSpellName": "Capacitor Totem",
+            "spellName": 192058,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "duration": "1",
             "event": "Cooldown Progress (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Capacitor Totem",
-            "spellIds": [],
             "spellName": 192058,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
-            "unevent": "auto",
             "unit": "player",
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
             "use_genericShowOn": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
-          "untrigger": {
-            "genericShowOn": "showOnCooldown"
-          }
+          "untrigger": []
         },
         "4": {
           "trigger": {
@@ -28593,7 +28603,8 @@
           "untrigger": []
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "eLhxGiRt)Hf",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -28638,7 +28649,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -28649,12 +28697,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -28681,36 +28758,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -29018,7 +29076,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -29064,26 +29122,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Earthbind Totem",
-            "spellIds": [],
-            "spellName": 2484,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -29121,36 +29159,39 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "realSpellName": "Earthbind Totem",
+            "spellName": 2484,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "duration": "1",
             "event": "Cooldown Progress (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Earthbind Totem",
-            "spellIds": [],
             "spellName": 2484,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
-            "unevent": "auto",
             "unit": "player",
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
             "use_genericShowOn": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
-          "untrigger": {
-            "genericShowOn": "showOnCooldown"
-          }
+          "untrigger": []
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "H6tbbgXB(E6",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -29195,7 +29236,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -29206,12 +29284,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -29238,36 +29345,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -29575,7 +29663,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -29621,27 +29709,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Earthgrab Totem",
-            "spellIds": [],
-            "spellName": 51485,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -29679,36 +29746,39 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "realSpellName": "Earthgrab Totem",
+            "spellName": 51485,
+            "type": "spell",
+            "unit": "player",
+            "use_genericShowOn": true,
+            "use_spellName": true,
+            "use_track": true
+          },
+          "untrigger": []
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
-            "duration": "1",
             "event": "Cooldown Progress (Spell)",
             "genericShowOn": "showOnCooldown",
-            "names": [],
             "realSpellName": "Earthgrab Totem",
-            "spellIds": [],
             "spellName": 51485,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
             "type": "spell",
-            "unevent": "auto",
             "unit": "player",
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
             "use_genericShowOn": true,
-            "use_showgcd": true,
             "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
+            "use_track": true
           },
-          "untrigger": {
-            "genericShowOn": "showOnCooldown"
-          }
+          "untrigger": []
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "VKtlmRjE6xD",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -30916,7 +30986,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -30974,7 +31081,7 @@
             },
             {
               "property": "sub.3.glowType",
-              "value": "buttonOverlay"
+              "value": "Pixel"
             },
             {
               "property": "desaturate"
@@ -36057,7 +36164,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -36068,12 +36212,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -36100,36 +36273,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -36440,7 +36594,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -36486,26 +36640,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Healing Stream Totem",
-            "spellIds": [],
-            "spellName": 5394,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -36543,6 +36677,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Healing Stream Totem",
+            "spellIds": [],
+            "spellName": 5394,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -36572,7 +36734,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "FYHKzkFYghM",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -36617,7 +36780,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -36628,12 +36828,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -36660,36 +36889,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -36997,7 +37207,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -37043,26 +37253,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Wind Rush Totem",
-            "spellIds": [],
-            "spellName": 192077,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -37100,6 +37290,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Wind Rush Totem",
+            "spellIds": [],
+            "spellName": 192077,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -37129,7 +37347,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "JWS1fkvXb1B",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -37174,7 +37393,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -37185,12 +37441,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -37217,36 +37502,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -37554,7 +37820,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -37600,26 +37866,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Tremor Totem",
-            "spellIds": [],
-            "spellName": 8143,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -37657,6 +37903,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Tremor Totem",
+            "spellIds": [],
+            "spellName": 8143,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -37686,7 +37960,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "BP1Re22NFtm",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -37731,7 +38006,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -37742,12 +38054,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -37774,36 +38115,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -38111,7 +38433,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -38157,26 +38479,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Poison Cleansing Totem",
-            "spellIds": [],
-            "spellName": 383013,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -38214,6 +38516,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Poison Cleansing Totem",
+            "spellIds": [],
+            "spellName": 383013,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -38243,7 +38573,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "ONUMuVAYwEh",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -38288,7 +38619,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -38299,12 +38667,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -38331,36 +38728,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -38668,7 +39046,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -38714,26 +39092,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Stoneskin Totem",
-            "spellIds": [],
-            "spellName": 383017,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -38771,6 +39129,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Stoneskin Totem",
+            "spellIds": [],
+            "spellName": 383017,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -38800,7 +39186,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "pBe1zxrS60)",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -38845,7 +39232,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -38856,12 +39280,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -38888,36 +39341,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -39225,7 +39659,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -39271,26 +39705,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Tranquil Air Totem",
-            "spellIds": [],
-            "spellName": 383019,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -39328,6 +39742,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Tranquil Air Totem",
+            "spellIds": [],
+            "spellName": 383019,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -39357,7 +39799,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "rvwxbNpCi7l",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -39402,7 +39845,44 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "utility",
+          "limitType": "none",
+          "name": "Utility Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "default": 1,
+              "key": "behavior",
+              "name": "Display Behavior",
+              "type": "select",
+              "useDesc": false,
+              "values": [
+                "Show on Cooldown",
+                "Always Show"
+              ],
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -39413,12 +39893,41 @@
         {
           "changes": [
             {
+              "property": "sub.3.glow",
+              "value": false
+            },
+            {
+              "property": "sub.3.glowType",
+              "value": "buttonOverlay"
+            }
+          ],
+          "check": {
+            "trigger": 2,
+            "value": 0,
+            "variable": "onCooldown"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "sub.3.glow"
+            }
+          ],
+          "check": {
+            "trigger": -1,
+            "value": 0,
+            "variable": "incombat"
+          }
+        },
+        {
+          "changes": [
+            {
               "property": "desaturate",
               "value": true
             }
           ],
           "check": {
-            "trigger": 3,
+            "trigger": 2,
             "value": 1,
             "variable": "onCooldown"
           }
@@ -39445,36 +39954,17 @@
             }
           ],
           "check": {
-            "trigger": 2,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "cooldownSwipe"
-            },
-            {
-              "property": "cooldownEdge"
-            },
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "trigger": 1,
             "value": 1,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "utility": {
+          "behavior": 1
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -39785,7 +40275,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -39831,27 +40321,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Ancestral Protection Totem",
-            "spellIds": [],
-            "spellName": 207399,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -39889,6 +40358,34 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "duration": "1",
+            "event": "Cooldown Progress (Spell)",
+            "genericShowOn": "showAlways",
+            "names": [],
+            "realSpellName": "Ancestral Protection Totem",
+            "spellIds": [],
+            "spellName": 207399,
+            "subeventPrefix": "SPELL",
+            "subeventSuffix": "_CAST_START",
+            "track": "auto",
+            "type": "spell",
+            "unevent": "auto",
+            "unit": "player",
+            "use_absorbMode": true,
+            "use_exact_spellName": false,
+            "use_genericShowOn": true,
+            "use_showgcd": true,
+            "use_spellName": true,
+            "use_track": true,
+            "use_unit": true
+          },
+          "untrigger": {
+            "genericShowOn": "showOnCooldown"
+          }
+        },
         "3": {
           "trigger": {
             "debuffType": "HELPFUL",
@@ -39918,7 +40415,8 @@
           }
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if aura_env.config.utility.behavior == 1 then -- Show Only on Cooldown\n        return t[1] or t[3]\n    else\n        return t[2] -- Default: Always Show\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "oqu)yZ0jSbQ",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -39986,7 +40484,21 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [],
+      "controlledChildren": [
+        "Mana Spring Totem",
+        "Windfury Totem",
+        "Improved Flametongue Weapon",
+        "Windfury Weapon",
+        "Flametongue Weapon",
+        "Earthliving Weapon",
+        "Lightning Shield",
+        "Water Shield",
+        "Earth Shield (Elemental & Enhancement)",
+        "Nature's Guardian",
+        "Reincarnation",
+        "Bloodlust",
+        "Heroism"
+      ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
       "customSort": "",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
@@ -40086,7 +40598,68 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "maintenance",
+          "limitType": "none",
+          "name": "Maintenance Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "collapse": false,
+              "groupType": "simple",
+              "hideReorder": true,
+              "key": "mana_spring_totem",
+              "limitType": "none",
+              "name": "Mana Spring Totem",
+              "nameSource": 0,
+              "noMerge": false,
+              "size": 10,
+              "subOptions": [
+                {
+                  "fontSize": "large",
+                  "text": "Mana Spring Totem",
+                  "type": "description",
+                  "width": 1
+                },
+                {
+                  "default": 3,
+                  "key": "behavior",
+                  "name": "Behavior",
+                  "type": "select",
+                  "useDesc": false,
+                  "values": [
+                    "Show if Found",
+                    "Show if Missing",
+                    "Always Show"
+                  ],
+                  "width": 1
+                }
+              ],
+              "type": "group",
+              "useCollapse": false,
+              "useDesc": false,
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -40094,19 +40667,6 @@
         1
       ],
       "conditions": [
-        {
-          "changes": [
-            {
-              "property": "desaturate",
-              "value": true
-            }
-          ],
-          "check": {
-            "trigger": 3,
-            "value": 1,
-            "variable": "onCooldown"
-          }
-        },
         {
           "changes": [
             {
@@ -40129,7 +40689,7 @@
             }
           ],
           "check": {
-            "trigger": 2,
+            "trigger": 1,
             "value": 1,
             "variable": "show"
           }
@@ -40152,13 +40712,52 @@
             }
           ],
           "check": {
+            "checks": [
+              {
+                "trigger": 1,
+                "value": 1,
+                "variable": "show"
+              },
+              {
+                "trigger": 3,
+                "value": 0,
+                "variable": "show"
+              }
+            ],
+            "trigger": -2,
+            "variable": "AND"
+          }
+        },
+        {
+          "changes": [
+            {
+              "property": "desaturate",
+              "value": true
+            },
+            {
+              "property": "color",
+              "value": [
+                1,
+                1,
+                1,
+                0.5
+              ]
+            }
+          ],
+          "check": {
             "trigger": 1,
-            "value": 1,
+            "value": 0,
             "variable": "show"
           }
         }
       ],
-      "config": [],
+      "config": {
+        "maintenance": {
+          "mana_spring_totem": {
+            "behavior": 3
+          }
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -40466,7 +41065,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -40512,27 +41111,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Mana Spring Totem",
-            "spellIds": [],
-            "spellName": 381930,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -40570,36 +41148,49 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
+        "2": {
+          "trigger": {
+            "auranames": [
+              "395197"
+            ],
+            "debuffType": "HELPFUL",
+            "matchesShowOn": "showOnMissing",
+            "type": "aura2",
+            "unit": "player",
+            "useName": true
+          },
+          "untrigger": []
+        },
         "3": {
           "trigger": {
+            "auranames": [
+              "395197"
+            ],
             "debuffType": "HELPFUL",
-            "duration": "1",
-            "event": "Cooldown Progress (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Mana Spring Totem",
-            "spellIds": [],
-            "spellName": 381930,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
-            "type": "spell",
-            "unevent": "auto",
+            "ownOnly": true,
+            "type": "aura2",
             "unit": "player",
+            "useName": true
+          },
+          "untrigger": []
+        },
+        "4": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Conditions",
+            "type": "unit",
+            "unit": "player",
+            "use_absorbHealMode": true,
             "use_absorbMode": true,
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_showgcd": true,
-            "use_spellName": true,
-            "use_track": true,
+            "use_incombat": false,
+            "use_resting": true,
             "use_unit": true
           },
-          "untrigger": {
-            "genericShowOn": "showOnCooldown"
-          }
+          "untrigger": []
         },
         "activeTriggerMode": -10,
-        "disjunctive": "any"
+        "customTriggerLogic": "function(t)\n    if t[4] and not t[1] then -- If in Rested Area\n        return false\n    end\n    \n    local behavior = aura_env.config.maintenance.mana_spring_totem.behavior\n    \n    if behavior == 1 then -- Show if Applied\n        return t[1]\n    elseif behavior == 2 then -- Show if Missing\n        return t[2]\n    else -- Always Show\n        return true\n    end\nend",
+        "disjunctive": "custom"
       },
       "uid": "dNeq505jlKS",
       "url": "https://wago.io/LuxthosShamanDragonflight/52",
@@ -40644,7 +41235,68 @@
           "type": "none"
         }
       },
-      "authorOptions": [],
+      "authorOptions": [
+        {
+          "collapse": true,
+          "groupType": "simple",
+          "hideReorder": true,
+          "key": "maintenance",
+          "limitType": "none",
+          "name": "Maintenance Icons",
+          "nameSource": 0,
+          "noMerge": false,
+          "size": 10,
+          "subOptions": [
+            {
+              "noMerge": false,
+              "text": "Behavior",
+              "type": "header",
+              "useName": true,
+              "width": 1
+            },
+            {
+              "collapse": false,
+              "groupType": "simple",
+              "hideReorder": true,
+              "key": "windfury_totem",
+              "limitType": "none",
+              "name": "Windfury Totem",
+              "nameSource": 0,
+              "noMerge": false,
+              "size": 10,
+              "subOptions": [
+                {
+                  "fontSize": "large",
+                  "text": "Windfury Totem",
+                  "type": "description",
+                  "width": 1
+                },
+                {
+                  "default": 3,
+                  "key": "behavior",
+                  "name": "Behavior",
+                  "type": "select",
+                  "useDesc": false,
+                  "values": [
+                    "Show if Found",
+                    "Show if Missing",
+                    "Always Show"
+                  ],
+                  "width": 1
+                }
+              ],
+              "type": "group",
+              "useCollapse": false,
+              "useDesc": false,
+              "width": 1
+            }
+          ],
+          "type": "group",
+          "useCollapse": true,
+          "useDesc": false,
+          "width": 1
+        }
+      ],
       "color": [
         1,
         1,
@@ -40652,19 +41304,6 @@
         1
       ],
       "conditions": [
-        {
-          "changes": [
-            {
-              "property": "desaturate",
-              "value": true
-            }
-          ],
-          "check": {
-            "trigger": 3,
-            "value": 1,
-            "variable": "onCooldown"
-          }
-        },
         {
           "changes": [
             {
@@ -40687,7 +41326,7 @@
             }
           ],
           "check": {
-            "trigger": 2,
+            "trigger": 1,
             "value": 1,
             "variable": "show"
           }
@@ -40710,41 +41349,52 @@
             }
           ],
           "check": {
-            "trigger": 1,
-            "value": 1,
-            "variable": "show"
-          }
-        },
-        {
-          "changes": [
-            {
-              "property": "sub.3.glow",
-              "value": true
-            },
-            {
-              "property": "sub.3.glowType",
-              "value": "buttonOverlay"
-            }
-          ],
-          "check": {
             "checks": [
               {
-                "trigger": 2,
+                "trigger": 1,
                 "value": 1,
                 "variable": "show"
               },
               {
-                "trigger": 4,
-                "value": 1,
+                "trigger": 3,
+                "value": 0,
                 "variable": "show"
               }
             ],
             "trigger": -2,
             "variable": "AND"
           }
+        },
+        {
+          "changes": [
+            {
+              "property": "desaturate",
+              "value": true
+            },
+            {
+              "property": "color",
+              "value": [
+                1,
+                1,
+                1,
+                0.5
+              ]
+            }
+          ],
+          "check": {
+            "trigger": 1,
+            "value": 0,
+            "variable": "show"
+          }
         }
       ],
-      "config": [],
+      "config": {
+        "maintenance": {
+          "windfury_totem": {
+            "behavior": 3
+          }
+        }
+      },
       "cooldown": true,
       "cooldownEdge": false,
       "cooldownSwipe": true,
@@ -41055,7 +41705,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Right Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -41101,27 +41751,6 @@
       "triggers": {
         "1": {
           "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1.5",
-            "event": "Cooldown Ready (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Windfury Totem",
-            "spellIds": [],
-            "spellName": 8512,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "type": "spell",
-            "unit": "player",
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_spellName": true,
-            "use_track": true
-          },
-          "untrigger": []
-        },
-        "2": {
-          "trigger": {
             "auranames": [],
             "check": "event",
             "custom": "function(event, arg1)\n    if event == \"PLAYER_TOTEM_UPDATE\" and arg1 then\n        local haveTotem, name, startTime, duration, icon = GetTotemInfo(arg1)\n        if haveTotem and icon == aura_env.texture then\n            aura_env.haveTotem, aura_env.name, aura_env.startTime, aura_env.duration, aura_env.icon = haveTotem, name, startTime, duration, icon\n            aura_env.index = arg1\n            return true\n        elseif aura_env.index == arg1 then\n            aura_env.index = 0\n            aura_env.startTime, aura_env.duration = nil, nil\n        end\n    end\nend",
@@ -41159,35 +41788,7 @@
             "custom": "function()\n    return aura_env.index == 0\nend"
           }
         },
-        "3": {
-          "trigger": {
-            "debuffType": "HELPFUL",
-            "duration": "1",
-            "event": "Cooldown Progress (Spell)",
-            "genericShowOn": "showOnCooldown",
-            "names": [],
-            "realSpellName": "Windfury Totem",
-            "spellIds": [],
-            "spellName": 8512,
-            "subeventPrefix": "SPELL",
-            "subeventSuffix": "_CAST_START",
-            "track": "auto",
-            "type": "spell",
-            "unevent": "auto",
-            "unit": "player",
-            "use_absorbMode": true,
-            "use_exact_spellName": false,
-            "use_genericShowOn": true,
-            "use_showgcd": true,
-            "use_spellName": true,
-            "use_track": true,
-            "use_unit": true
-          },
-          "untrigger": {
-            "genericShowOn": "showOnCooldown"
-          }
-        },
-        "4": {
+        "2": {
           "trigger": {
             "auranames": [
               "327942"
@@ -41200,8 +41801,35 @@
           },
           "untrigger": []
         },
+        "3": {
+          "trigger": {
+            "auranames": [
+              "327942"
+            ],
+            "debuffType": "HELPFUL",
+            "ownOnly": true,
+            "type": "aura2",
+            "unit": "player",
+            "useName": true
+          },
+          "untrigger": []
+        },
+        "4": {
+          "trigger": {
+            "debuffType": "HELPFUL",
+            "event": "Conditions",
+            "type": "unit",
+            "unit": "player",
+            "use_absorbHealMode": true,
+            "use_absorbMode": true,
+            "use_incombat": false,
+            "use_resting": true,
+            "use_unit": true
+          },
+          "untrigger": []
+        },
         "activeTriggerMode": -10,
-        "customTriggerLogic": "function(t)\n    return t[1] or t[2]\nend",
+        "customTriggerLogic": "function(t)\n    if t[4] and not t[1] then -- If in Rested Area\n        return false\n    end\n    \n    local behavior = aura_env.config.maintenance.windfury_totem.behavior\n    \n    if behavior == 1 then -- Show if Applied\n        return t[1]\n    elseif behavior == 2 then -- Show if Missing\n        return t[2]\n    else -- Always Show\n        return true\n    end\nend",
         "disjunctive": "custom"
       },
       "uid": "99qYAMXeAuj",
@@ -41693,7 +42321,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -42328,7 +42956,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -42990,7 +43618,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -43652,7 +44280,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -44314,7 +44942,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -44963,7 +45591,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -45488,7 +46116,7 @@
         "use_spellknown": false,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -45962,7 +46590,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -46407,7 +47035,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -46978,7 +47606,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Left Side - LWA - Shaman",
+      "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -49540,46 +50168,6 @@
           "text_visible": true,
           "text_wordWrap": "WordWrap",
           "type": "subtext"
-        },
-        {
-          "anchorXOffset": 0,
-          "anchorYOffset": 0,
-          "rotateText": "NONE",
-          "text_anchorPoint": "INNER_CENTER",
-          "text_automaticWidth": "Auto",
-          "text_color": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "text_fixedWidth": 64,
-          "text_font": "Friz Quadrata TT",
-          "text_fontSize": 14,
-          "text_fontType": "OUTLINE",
-          "text_justify": "CENTER",
-          "text_selfPoint": "AUTO",
-          "text_shadowColor": [
-            0,
-            0,
-            0,
-            1
-          ],
-          "text_shadowXOffset": 1,
-          "text_shadowYOffset": -1,
-          "text_text": "%s",
-          "text_text_format_c_format": "none",
-          "text_text_format_n_format": "none",
-          "text_text_format_p_format": "timed",
-          "text_text_format_p_time_dynamic_threshold": 60,
-          "text_text_format_p_time_format": 0,
-          "text_text_format_p_time_legacy_floor": false,
-          "text_text_format_p_time_mod_rate": true,
-          "text_text_format_p_time_precision": 1,
-          "text_text_format_s_format": "none",
-          "text_visible": true,
-          "text_wordWrap": "WordWrap",
-          "type": "subtext"
         }
       ],
       "texture": "Solid",
@@ -50221,6 +50809,46 @@
           "text_text": "%c",
           "text_text_format_c_format": "none",
           "text_text_format_n_format": "none",
+          "text_visible": true,
+          "text_wordWrap": "WordWrap",
+          "type": "subtext"
+        },
+        {
+          "anchorXOffset": 0,
+          "anchorYOffset": 0,
+          "rotateText": "NONE",
+          "text_anchorPoint": "INNER_CENTER",
+          "text_automaticWidth": "Auto",
+          "text_color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "text_fixedWidth": 64,
+          "text_font": "Friz Quadrata TT",
+          "text_fontSize": 14,
+          "text_fontType": "OUTLINE",
+          "text_justify": "CENTER",
+          "text_selfPoint": "AUTO",
+          "text_shadowColor": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "text_shadowXOffset": 1,
+          "text_shadowYOffset": -1,
+          "text_text": "%s",
+          "text_text_format_c_format": "none",
+          "text_text_format_n_format": "none",
+          "text_text_format_p_format": "timed",
+          "text_text_format_p_time_dynamic_threshold": 60,
+          "text_text_format_p_time_format": 0,
+          "text_text_format_p_time_legacy_floor": false,
+          "text_text_format_p_time_mod_rate": true,
+          "text_text_format_p_time_precision": 1,
+          "text_text_format_s_format": "none",
           "text_visible": true,
           "text_wordWrap": "WordWrap",
           "type": "subtext"
@@ -54183,7 +54811,7 @@
       "Resources - LWA - Shaman"
     ],
     "desc": "Made by Luxthos - twitch.tv/luxthos",
-    "frameStrata": 1,
+    "frameStrata": 2,
     "groupIcon": "interface/icons/classicon_shaman.blp",
     "id": "Luxthos - Shaman",
     "information": {
