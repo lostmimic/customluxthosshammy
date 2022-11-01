@@ -24227,7 +24227,21 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [],
+      "controlledChildren": [
+        "Mana Spring Totem",
+        "Windfury Totem",
+        "Improved Flametongue Weapon",
+        "Windfury Weapon",
+        "Flametongue Weapon",
+        "Earthliving Weapon",
+        "Lightning Shield",
+        "Water Shield",
+        "Earth Shield (Elemental & Enhancement)",
+        "Nature's Guardian",
+        "Reincarnation",
+        "Bloodlust",
+        "Heroism"
+      ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowLeftSide then\n        LWA.GrowLeftSide(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
       "frameStrata": 1,
@@ -40484,21 +40498,7 @@
       "conditions": [],
       "config": [],
       "constantFactor": "RADIUS",
-      "controlledChildren": [
-        "Mana Spring Totem",
-        "Windfury Totem",
-        "Improved Flametongue Weapon",
-        "Windfury Weapon",
-        "Flametongue Weapon",
-        "Earthliving Weapon",
-        "Lightning Shield",
-        "Water Shield",
-        "Earth Shield (Elemental & Enhancement)",
-        "Nature's Guardian",
-        "Reincarnation",
-        "Bloodlust",
-        "Heroism"
-      ],
+      "controlledChildren": [],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n    \n    if LWA and LWA.GrowMaintenance then\n        LWA.GrowMaintenance(newPositions, activeRegions)\n    end\nend",
       "customSort": "",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
@@ -41065,7 +41065,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -41705,7 +41705,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -42321,7 +42321,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -42956,7 +42956,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -43618,7 +43618,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -44280,7 +44280,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -44942,7 +44942,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -45591,7 +45591,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -46116,7 +46116,7 @@
         "use_spellknown": false,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -46590,7 +46590,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -47035,7 +47035,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -47606,7 +47606,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
@@ -48229,7 +48229,7 @@
         "use_spellknown": true,
         "use_vehicleUi": false
       },
-      "parent": "Maintenance - LWA - Shaman",
+      "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.12",
