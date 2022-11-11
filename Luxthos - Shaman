@@ -11417,6 +11417,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -11717,6 +11718,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -11999,6 +12001,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -12248,6 +12251,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -13058,6 +13062,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -13418,6 +13423,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -13776,6 +13782,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -14099,6 +14106,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -14437,6 +14445,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -17280,6 +17289,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -18741,6 +18751,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -19355,6 +19366,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -19605,6 +19617,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -19885,6 +19898,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -21094,6 +21108,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -22327,6 +22342,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -23386,6 +23402,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -23657,6 +23674,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -25035,6 +25053,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -25594,6 +25613,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -26154,6 +26174,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -26740,6 +26761,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -27292,6 +27314,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -27878,6 +27901,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -28491,6 +28515,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -29094,6 +29119,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -29681,6 +29707,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -30290,6 +30317,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -30851,6 +30879,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -31455,6 +31484,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -32055,6 +32085,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -32698,6 +32729,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -33285,6 +33317,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -33819,6 +33852,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -34380,6 +34414,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -34959,6 +34994,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -35509,6 +35545,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -36043,6 +36080,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -36612,6 +36650,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -37225,6 +37264,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -37838,6 +37878,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -38451,6 +38492,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -39064,6 +39106,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -39677,6 +39720,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -40293,6 +40337,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -41069,6 +41114,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -41709,6 +41755,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -42325,6 +42372,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -42960,6 +43008,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -43622,6 +43671,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -44284,6 +44334,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -44946,6 +44997,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -45595,6 +45647,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -46594,6 +46647,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -47039,6 +47093,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -47610,6 +47665,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -48233,6 +48289,7 @@
       "regionType": "icon",
       "selfPoint": "CENTER",
       "semver": "3.0.13",
+      "source": "import",
       "subRegions": [
         {
           "type": "subbackground"
@@ -49867,6 +49924,13 @@
       "selfPoint": "TOP",
       "semver": "3.0.13",
       "sort": "none",
+      "sortHybridTable": {
+        "Maelstrom Weapon 1": false,
+        "Maelstrom Weapon 2": false,
+        "Maelstrom Weapon 3": false,
+        "Maelstrom Weapon 4": false,
+        "Maelstrom Weapon 5": false
+      },
       "source": "import",
       "space": 2,
       "stagger": 0,
@@ -51914,6 +51978,10 @@
       "selfPoint": "TOP",
       "semver": "3.0.13",
       "sort": "none",
+      "sortHybridTable": {
+        "Lava Burst 1": false,
+        "Lava Burst 2": false
+      },
       "source": "import",
       "space": 2,
       "stagger": 0,
