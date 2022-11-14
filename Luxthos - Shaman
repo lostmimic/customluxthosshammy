@@ -1300,7 +1300,7 @@
       "parent": "Luxthos - Shaman",
       "regionType": "icon",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -1311,7 +1311,7 @@
       "triggers": {
         "1": {
           "trigger": {
-            "custom": "function ()\n    local LWA = LWA[aura_env.CLASS]\n    \n    if LWA.ThrottledInit then\n        LWA.ThrottledInit()\n    end\nend",
+            "custom": "function ()\n    WeakAuras.ScanEvents(\"LWA_OPTIONS\")\nend",
             "custom_hide": "custom",
             "custom_type": "event",
             "debuffType": "HELPFUL",
@@ -1331,9 +1331,9 @@
         "disjunctive": "any"
       },
       "uid": "PHmqEDiEKU5",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 1,
       "xOffset": 0,
@@ -1344,7 +1344,7 @@
       "actions": {
         "finish": [],
         "init": {
-          "custom": "local local_env = aura_env\nlocal CLASS = local_env.id:gsub(\"General Options %- LWA %- \", \"\")\nlocal_env.CLASS = CLASS\n\nLWA = LWA or {}\nLWA[CLASS] = LWA[CLASS] or {}\n\nlocal LWA = LWA[CLASS]\n\nlocal config = nil\nLWA.configs = LWA.configs or {}\nLWA.configs[\"general\"] = local_env.config\n\n\nlocal CLASS_GROUP = \"Luxthos - \" .. CLASS\nlocal DYNAMIC_EFFECTS_GROUP = \"Dynamic Effects - LWA - \" .. CLASS\nlocal CORE_GROUP = \"Core - LWA - \" .. CLASS\nlocal LEFT_SIDE_GROUP = \"Left Side - LWA - \" .. CLASS\nlocal RIGHT_SIDE_GROUP = \"Right Side - LWA - \" .. CLASS\nlocal UTILITIES_GROUP = \"Utilities - LWA - \" .. CLASS\nlocal MAINTENANCE_GROUP = \"Maintenance - LWA - \" .. CLASS\nlocal RESOURCES_GROUP = \"Resources - LWA - \" .. CLASS\nlocal CAST_BAR = \"Cast Bar - LWA - \" .. CLASS\n\nlocal_env.parent = CLASS_GROUP\n\nlocal MAX_WIDTH = 405\nlocal RESOURCES_HEIGHT = 0\nlocal NB_CORE = 8\nlocal resources\n\nlocal function tclone(t1)\n    local t = {}\n    \n    if t1 then\n        for k, v in pairs(t1) do\n            if \"table\" == type(v) then\n                v = tclone(v)\n            end\n            \n            if \"string\" == type(k) then\n                t[k] = v\n            else\n                tinsert(t, v)\n            end\n        end\n    end\n    \n    return t\nend\n\nlocal function tmerge(...)\n    local ts = {...}\n    local t = tclone(ts[1])\n    local t2\n    \n    for i = 2, #ts do\n        t2 = ts[i] or {}\n        \n        for k, v in pairs(t2) do\n            if \"table\" == type(v) then\n                v = tclone(v)\n                \n                if t[k] and #t[k] == 0 then\n                    t[k] = tmerge(t[k], v)\n                else\n                    t[k] = v\n                end\n            else\n                t[k] = v\n            end\n        end\n    end\n    \n    return t\nend\n\nlocal function SetRegionSize(r, w, h)\n    r:SetRegionWidth(w)\n    r:SetRegionHeight(h)\nend\n\nlocal function ResizeAnchorFrame(skipCore)\n    local config = LWA.GetConfig()\n    local h = max(1, config.core.height + config.core.spacing + config.core.margin + RESOURCES_HEIGHT)\n    \n    if 1 == h % 2 then\n        h = h + 1\n    end\n    \n    SetRegionSize(local_env.region, MAX_WIDTH, h)\n    \n    local function RepositionGroups()\n        local configs = { config.core, config.utility, config.maintenance }\n        \n        for i, g in ipairs({ CORE_GROUP, UTILITIES_GROUP, MAINTENANCE_GROUP }) do\n            if not (skipCore and CORE_GROUP == g) then\n                g = WeakAuras.GetRegion(g)\n                \n                if g then\n                    g:PositionChildren()\n                    \n                    if 0 == #g.sortedChildren then\n                        g:SetHeight(configs[i].height)\n                        g.currentHeight = configs[i].height\n                    end\n                end\n            end\n        end\n    end\n    \n    if skipCore then\n        C_Timer.After(0.05, RepositionGroups)\n    else\n        RepositionGroups()\n    end\nend\n\nfunction LWA.GetConfig(grp, force)\n    local default = {\n        style = {\n            border_size = 0,\n            border_icons = true,\n            border_resources = true,\n            border_color = { [1] = 0, [2] = 0, [3] = 0, [4] = 1 },\n            zoom = 30,\n        },\n        core = {\n            nb_min = 5,\n            nb_max = 8,\n            width = 48,\n            height = 48,\n            spacing = 3,\n            margin = 0,\n            resources_position = 2, -- Below\n        },\n        utility = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 10,\n            behavior = 2, -- Always Show\n        },\n        top = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 10,\n        },\n        side = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 3,\n            grow_direction = 1,\n        },\n        maintenance = {\n            width = 36,\n            height = 36,\n            spacing = 0,\n            margin = 10,\n        },\n        alpha = {\n            global = 100,\n            ooc = 100,\n            ignore_enemy = true,\n            ignore_friendly = true,\n        },\n        resources = {\n            health_bar = {\n                format = 1\n            },\n            mana_bar = {\n                format = 1\n            }\n        },\n    }\n    \n    if force or not config or WeakAuras.IsOptionsOpen() then\n        config = tmerge(\n            default,\n            LWA.configs[\"general\"],\n            LWA.configs[\"class\"] or {}\n        )\n    end\n    \n    if grp then\n        return config[grp] or {}\n    end\n    \n    return config\nend\n\nlocal function UpdateBorder(region, apply)\n    if #region.subRegions > 0 then\n        local config, size, r, g, b, a = LWA.GetConfig(), 0\n        \n        if apply then\n            size = config.style.border_size\n            r, g, b, a = unpack(config.style.border_color)\n        end\n        \n        for _, border in ipairs(region.subRegions) do\n            if \"subborder\" == border.type then\n                border:SetVisible(size > 0)\n                \n                if size > 0 then\n                    local bd = border:GetBackdrop()\n                    bd.edgeSize = size\n                    border:SetBackdrop(bd)\n                    border:SetBorderColor(r, g, b, a)\n                end\n            end\n        end\n    end\nend\n\nlocal throttledInitHandler = nil\nlocal initLastRun = 0\n\nfunction LWA.ThrottledInit()\n    if throttledInitHandler then return end\n    \n    local currentTime = time()\n    \n    if WeakAuras.IsImporting() then\n        throttledInitHandler = C_Timer.NewTimer(2, LWA.ThrottledInit)\n        \n    elseif initLastRun <= currentTime - 0.2 then\n        throttledInitHandler = C_Timer.NewTimer(0.05, LWA.Init)\n    else\n        throttledInitHandler = C_Timer.NewTimer(max(0.05, currentTime - initLastRun), LWA.Init)\n    end\nend\n\nfunction LWA.Init()\n    if WeakAuras.IsImporting() then return end\n    \n    initLastRun = time()\n    \n    local config = LWA.GetConfig(nil, true)\n    local isOptionsOpen = WeakAuras.IsOptionsOpen()\n    local zoom = config.style.zoom / 100\n    \n    if throttledInitHandler then\n        throttledInitHandler:Cancel()\n        throttledInitHandler = nil\n    end\n    \n    if not local_env.parentFrame then\n        local_env.parentFrame = WeakAuras.GetRegion(CLASS_GROUP)\n    end\n    \n    if local_env.parentFrame and not local_env.parentFrame.SetRealScale then\n        local_env.parentFrame.SetRealScale = local_env.parentFrame.SetScale\n        \n        local_env.parentFrame.SetScale = function(self, scale)\n            local_env.parentFrame:SetRealScale(scale)\n            local castBar = WeakAuras.GetRegion(CAST_BAR)\n            \n            if castBar then\n                castBar:SetScale(scale)\n            end\n        end\n    end\n    \n    if isOptionsOpen then\n        NB_CORE = config.core.nb_max\n    else\n        NB_CORE = max(4, config.core.nb_min, min(NB_CORE, config.core.nb_max))\n    end\n    \n    MAX_WIDTH = NB_CORE * (config.core.width + config.core.spacing) - config.core.spacing\n    \n    local function InitIcons(group, c, selfPoint)\n        local grpRegion = WeakAuras.GetRegion(group)\n        \n        if not grpRegion then return end\n        \n        local i, isAbilities = 0, CORE_GROUP == group\n        \n        for childId, regions in pairs(grpRegion.controlledChildren) do\n            local region = regions[\"\"] and regions[\"\"].regionData.region\n            \n            i = i + 1\n            \n            if region then\n                region:SetAnchor(selfPoint, region.relativeTo, region.relativePoint)\n                \n                if region.SetZoom then\n                    region:SetZoom(min(1, zoom + (region.extraZoom or 0)))\n                else\n                    print(\"LWA Issue: \" .. CLASS .. \" > \" .. group .. \" > \" .. childId)\n                end\n                \n                if isAbilities and i > NB_CORE then\n                    SetRegionSize(region, config.top.width, config.top.height)\n                else\n                    SetRegionSize(region, c.width, c.height)\n                end\n                \n                UpdateBorder(region, config.style.border_icons)\n            end\n        end\n        \n        if isAbilities then\n            grpRegion:PositionChildren()\n            \n            if not isOptionsOpen then\n                NB_CORE = max(4, config.core.nb_min, min(#grpRegion.sortedChildren, config.core.nb_max))\n                \n                MAX_WIDTH = NB_CORE * (config.core.width + config.core.spacing) - config.core.spacing\n            end\n            \n            local_env.region:SetRegionWidth(MAX_WIDTH)\n        end\n    end\n    \n    InitIcons(CORE_GROUP, config.core, \"BOTTOM\")\n    InitIcons(UTILITIES_GROUP, config.utility, \"TOP\")\n    InitIcons(MAINTENANCE_GROUP, config.maintenance, \"TOP\")\n    InitIcons(DYNAMIC_EFFECTS_GROUP, config.top, \"BOTTOMRIGHT\")\n    InitIcons(LEFT_SIDE_GROUP, config.side, \"TOPRIGHT\")\n    InitIcons(RIGHT_SIDE_GROUP, config.side, \"TOPLEFT\")\n    \n    local_env.UpdateResources()\n    \n    for _, g in ipairs({ DYNAMIC_EFFECTS_GROUP, LEFT_SIDE_GROUP, RIGHT_SIDE_GROUP }) do\n        g = WeakAuras.GetRegion(g)\n        \n        if g then\n            g:PositionChildren()\n        end\n    end\nend\n\nfunction local_env.UpdateResources()\n    if WeakAuras.IsImporting() then return end\n    \n    local config = LWA.GetConfig()\n    \n    local totalHeight, nb = 0, 0\n    local h1 = config.core.height\n    local s1 = config.core.spacing\n    local m1 = config.core.margin\n    local y = 0\n    \n    local grpRegion = WeakAuras.GetRegion(RESOURCES_GROUP)\n    \n    if not resources or WeakAuras.IsOptionsOpen() then\n        local grpData = WeakAuras.GetData(RESOURCES_GROUP)\n        \n        resources = grpData and grpData.controlledChildren\n    end\n    \n    if grpRegion and resources and #resources > 0 then\n        if config.core.resources_position == 2 then -- Below\n            y = h1 + s1 + m1\n        end\n        \n        grpRegion:SetOffset(0, -y)\n        \n        local isOptionsOpen = WeakAuras.IsOptionsOpen()\n        local resRegion, isVisible, regionType\n        local w, h = 0, 0\n        \n        local function InitResource(region, index, nb)\n            if not region then return end\n            \n            index = max(1, index or 1)\n            nb = max(1, nb or 1)\n            \n            w, h = MAX_WIDTH, 20\n            \n            if nb > 1 then\n                local s = config.core.spacing\n                \n                w = (w + s) / nb - s\n            end\n            \n            local cg = region.configGroup\n            \n            if cg and config.resources[cg] then\n                h = config.resources[cg].height or 20\n            end\n            \n            SetRegionSize(region, w, h)\n            region.bar:Update()\n            UpdateBorder(region, config.style.border_resources)\n            local_env.UpdateBar({ region = region }, index, nb)\n            \n            if region.bar.spark then\n                region.bar.spark:SetHeight(max(15, Round(h * 2)))\n            end\n        end\n        \n        y = 0\n        \n        for _, resId in ipairs(resources) do\n            resRegion = WeakAuras.GetRegion(resId)\n            \n            if resRegion then\n                isVisible = isOptionsOpen\n                regionType = resRegion.regionType\n                h = 0\n                \n                if \"aurabar\" == regionType then\n                    isVisible = isVisible or resRegion:IsVisible()\n                    InitResource(resRegion)\n                    \n                elseif \"dynamicgroup\" == regionType then\n                    local nbChild = 0\n                    local childRegions = {}\n                    \n                    for _, region in pairs(resRegion.controlledChildren) do\n                        if region and region[\"\"] then\n                            nbChild = nbChild + 1\n                            \n                            childRegions[region[\"\"].regionData.dataIndex] = region[\"\"].regionData.region\n                            \n                            isVisible = isVisible or region[\"\"].regionData.region:IsVisible()\n                        end\n                    end\n                    \n                    for i, region in ipairs(childRegions) do\n                        InitResource(region, i, nbChild)\n                        \n                        region:SetYOffset(-y)\n                    end\n                end\n                \n                if isVisible then\n                    nb = nb + 1\n                    \n                    if isVisible then\n                        if \"dynamicgroup\" == regionType then\n                            resRegion:PositionChildren()\n                        else\n                            resRegion:SetOffset(0, -y)\n                        end\n                    end\n                    \n                    totalHeight = totalHeight + h\n                    y = y + h + s1\n                end\n            end\n        end\n        \n        RESOURCES_HEIGHT = totalHeight + max(nb - 1, 0) * config.core.spacing\n    end\n    \n    ResizeAnchorFrame()\n    \n    local castBar = WeakAuras.GetRegion(CAST_BAR)\n    \n    if castBar then\n        castBar:SetParent(UIParent)\n        \n        if local_env.parentFrame then\n            castBar:SetScale(local_env.parentFrame:GetScale())\n        end\n    end\nend\n\nfunction LWA.GrowCore(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local w1 = config.core.width\n    local h1 = config.core.height\n    local s1 = config.core.spacing\n    local m1 = config.core.margin\n    \n    local maxCore = min(nb, config.core.nb_max)\n    local x, y\n    local xOffset = ((maxCore - 1) * (w1 + s1) / 2)\n    local yOffset = h1 + 1\n    local region\n    \n    if not WeakAuras.IsOptionsOpen() then\n        NB_CORE = max(4, config.core.nb_min, maxCore)\n        \n        MAX_WIDTH = NB_CORE * (w1 + s1) - s1\n        \n        ResizeAnchorFrame(true)\n    end\n    \n    if config.core.resources_position == 1 then  -- Above\n        yOffset = h1 + RESOURCES_HEIGHT + s1 + m1\n    end\n    \n    for i, regionData in ipairs(activeRegions) do\n        region = regionData.region\n        \n        x = (i - 1) * (w1 + s1) - xOffset\n        y = -yOffset\n        \n        SetRegionSize(region, w1, h1)\n        \n        newPositions[i] = { x, y }\n        \n        if i == maxCore then break end\n    end\n    \n    local maxOverflow = nb - maxCore\n    \n    if maxOverflow > 0 then\n        local w2 = config.top.width\n        local h2 = config.top.height\n        local s2 = config.top.spacing\n        local m2 = config.top.margin\n        \n        local nbPerRow = math.floor(((MAX_WIDTH / 2) + s2) / (w2 + s2)) or 1\n        local i2, j\n        \n        xOffset = -((MAX_WIDTH - w2) / 2)\n        yOffset = m2 + yOffset - h1 - h2 + max(s1, s2) - s2 - 2\n        \n        if config.core.resources_position == 1 then -- Above\n            yOffset = yOffset - RESOURCES_HEIGHT - s1 - m1\n        end\n        \n        for i, regionData in ipairs(activeRegions) do\n            if i > maxCore then\n                region = regionData.region\n                \n                i2 = i - maxCore\n                j = (i2 % nbPerRow)\n                \n                if j == 1 then\n                    yOffset = yOffset + h2 + s2\n                end\n                \n                if j == 0 then\n                    j = nbPerRow\n                end\n                \n                x = (j - 1) * (w2 + s2) + xOffset\n                y = yOffset\n                \n                SetRegionSize(region, w2, h2)\n                \n                newPositions[i] = { x, y }\n            end\n        end\n    end\nend\n\nfunction LWA.GrowDynamicEffects(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local w = config.top.width\n    local h = config.top.height\n    local s1 = config.core.spacing\n    local s2 = config.top.spacing\n    \n    local xOffset = 0\n    local yOffset = config.top.margin + max(s1, s2) - s2 - h\n    local nbPerRow, m = math.floor(((MAX_WIDTH / 2) + s2) / (w + s2)) or 1\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = 0\n            yOffset = yOffset + h + s2\n        end\n        \n        newPositions[i] = { -xOffset, yOffset }\n        \n        xOffset = xOffset + w + s2\n    end\nend\n\nfunction LWA.GrowLeftSide(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s1 = config.core.spacing\n    \n    local w2 = config.side.width\n    local h2 = config.side.height\n    local s2 = config.side.spacing\n    \n    local x, y\n    local xOffset = config.side.margin + max(s1, s2)\n    local yOffset = 0\n    \n    if config.side.grow_direction == 2 then -- Upward\n        yOffset = -(h2 + s2 + config.top.margin)\n    end\n    \n    for i, _ in ipairs(activeRegions) do\n        x = -xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n        \n        if config.side.grow_direction == 3 then -- Horizontal\n            xOffset = xOffset + w2 + s2\n            \n        elseif config.side.grow_direction == 2 then -- Upward\n            yOffset = -(-yOffset + h2 + s2)\n        else\n            yOffset = yOffset + h2 + s2\n        end\n    end\nend\n\nfunction LWA.GrowRightSide(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s1 = config.core.spacing\n    \n    local w2 = config.side.width\n    local h2 = config.side.height\n    local s2 = config.side.spacing\n    \n    local x, y\n    local xOffset = config.side.margin + max(s1, s2)\n    local yOffset = 0\n    \n    if config.side.grow_direction == 2 then -- Upward\n        yOffset = -(h2 + s2 + config.top.margin)\n    end\n    \n    for i, _ in ipairs(activeRegions) do\n        x = xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n        \n        if config.side.grow_direction == 3 then -- Horizontal\n            xOffset = xOffset + w2 + s2\n            \n        elseif config.side.grow_direction == 2 then -- Upward\n            yOffset = -(-yOffset + h2 + s2)\n        else\n            yOffset = yOffset + h2 + s2\n        end\n    end\nend\n\nfunction LWA.GrowUtilities(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local maxCore = min(nb, NB_CORE)\n    \n    local w1 = config.core.width\n    local s1 = config.core.spacing\n    \n    local w2 = config.utility.width\n    local h2 = config.utility.height\n    local s2 = config.utility.spacing\n    \n    local x, y\n    local xOffset = (maxCore - 1) * (w1 + s1) / 2\n    local yOffset = config.utility.margin + max(s1, s2) - s2 - h2\n    \n    local nbPerRow = math.floor((MAX_WIDTH + s2) / (w2 + s2)) or 1\n    local m\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = (min(nb - i, nbPerRow - 1)) * (w2 + s2) / 2\n            yOffset = yOffset + h2 + s2\n        end\n        \n        if m == 0 then\n            m = nbPerRow\n        end\n        \n        x = (m - 1) * (w2 + s2) - xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n    end\nend\n\nfunction LWA.GrowMaintenance(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local maxCore = min(nb, NB_CORE)\n    \n    local w1 = config.core.width\n    local s1 = config.core.spacing\n    \n    local w2 = config.maintenance.width\n    local h2 = config.maintenance.height\n    local s2 = config.maintenance.spacing\n    \n    local x, y\n    local xOffset = (maxCore - 1) * (w1 + s1) / 2\n    local yOffset = config.maintenance.margin + config.utility.margin + max(config.utility.spacing, s2) - s2 - h2\n    \n    local nbPerRow = math.floor((MAX_WIDTH + s2) / (w2 + s2)) or 1\n    local m\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = (min(nb - i, nbPerRow - 1)) * (w2 + s2) / 2\n            yOffset = yOffset + h2 + s2\n        end\n        \n        if m == 0 then\n            m = nbPerRow\n        end\n        \n        x = (m - 1) * (w2 + s2) - xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n    end\nend\n\nlocal function MixRGB(c1, c2, pos)\n    pos = 1 - (pos or 0.5)\n    \n    return {\n        (c1[1] * pos) + (c2[1] * (1 - pos)),\n        (c1[2] * pos) + (c2[2] * (1 - pos)),\n        (c1[3] * pos) + (c2[3] * (1 - pos)),\n        (c1[4] * pos) + (c2[4] * (1 - pos))\n    }\nend\n\nfunction local_env.UpdateBar(aura, i, nb)\n    local config = LWA.GetConfig(\"resources\")\n    local e = aura or aura_env\n    local region = e.region\n    local cg = region.configGroup\n    \n    if not (region and cg and config[cg]) then return end\n    \n    cg = config[cg]\n    \n    local cs = region.colorState or \"\"\n    \n    if cs ~= \"\" then\n        cs = cs .. \"_\"\n    end\n    \n    i = max(1, region.index or i or 1)\n    nb = max(1, region.indexMax or nb or 1)\n    \n    local c1, c2 = cg[cs .. \"color1\"], cg[cs .. \"color2\"]\n    local bar = region.bar\n    \n    if cg[cs .. \"gradient\"] and cg[cs .. \"gradient\"] < 3 then\n        if nb > 1 and 1 == cg[cs .. \"gradient\"] then\n            local cc1, cc2 = c1, c2\n            \n            if i > 1 then\n                c1 = MixRGB(cc1, cc2, (i - 1) / nb)\n            end\n            \n            c2 = MixRGB(cc1, cc2, i / nb)\n        end\n        \n        local orientation = \"HORIZONTAL\"\n        \n        if 2 == cg[cs .. \"gradient\"] then\n            orientation = \"VERTICAL\"\n            \n            local tmp = c1\n            c1 = c2\n            c2 = tmp\n        end\n        \n        bar.fg:SetGradient(orientation, CreateColor(unpack(c1)), CreateColor(unpack(c2)))\n    else\n        bar:SetForegroundColor(unpack(c1))\n    end\n    \n    if region.ot then\n        region.ot:SetColorTexture(unpack(c2))\n    end\nend\n\nfunction LWA.GrowDynamicResource(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s = config.core.spacing\n    local w = (MAX_WIDTH + s) / nb\n    local xOffset, x = (MAX_WIDTH - w + s) / 2\n    \n    for i, regionData in ipairs(activeRegions) do\n        x = (i - 1) * w - xOffset\n        \n        regionData.region:SetRegionWidth(w - s)\n        local_env.UpdateBar({ region = regionData.region }, i, nb)\n        regionData.region.bar:Update()\n        \n        newPositions[i] = { x, 0 }\n    end\nend\n\nlocal function round(num, decimals)\n    local mult = 10^(decimals or 0)\n    \n    return Round(num * mult) / mult\nend\n\nlocal barFormats = {\n    \"value\",\n    \"kvalue\",\n    \"value (percent%)\",\n    \"kvalue (percent%)\",\n    \"percent%\",\n}\n\nfunction LWA.UpdateBarText(value, percent, format)\n    local text = barFormats[format] or \"value\"\n    \n    text = text:gsub(\"percent\", round(percent, 0))\n    \n    if 2 == format or 4 == format then\n        local rem = math.fmod(value, 1000) or 0\n        \n        if rem >= 950 then\n            rem = 0\n        end\n        \n        text = text:gsub(\"kvalue\", FormatLargeNumber(Round((value - rem) / 1000)) .. \".\" .. Round(rem / 100) .. \"K\"):gsub(\"%.0K\", \"K\"):gsub(\"%.\", DECIMAL_SEPERATOR)\n    else\n        text = text:gsub(\"value\", value)\n    end\n    \n    return text\nend",
+          "custom": "local this = aura_env\nlocal CLASS = this.id:gsub(\"General Options %- LWA %- \", \"\")\nthis.CLASS = CLASS\n\nLWA = LWA or {}\nLWA[CLASS] = LWA[CLASS] or {}\n\nlocal LWA = LWA[CLASS]\n\nlocal config = nil\nLWA.configs = LWA.configs or {}\nLWA.configs[\"general\"] = this.config\n\n\nlocal CLASS_GROUP = \"Luxthos - \" .. CLASS\nlocal DYNAMIC_EFFECTS_GROUP = \"Dynamic Effects - LWA - \" .. CLASS\nlocal CORE_GROUP = \"Core - LWA - \" .. CLASS\nlocal LEFT_SIDE_GROUP = \"Left Side - LWA - \" .. CLASS\nlocal RIGHT_SIDE_GROUP = \"Right Side - LWA - \" .. CLASS\nlocal UTILITIES_GROUP = \"Utilities - LWA - \" .. CLASS\nlocal MAINTENANCE_GROUP = \"Maintenance - LWA - \" .. CLASS\nlocal RESOURCES_GROUP = \"Resources - LWA - \" .. CLASS\nlocal CAST_BAR = \"Cast Bar - LWA - \" .. CLASS\n\nlocal MAX_WIDTH = 405\nlocal RESOURCES_HEIGHT = 0\nlocal NB_CORE = 8\n\nthis.parent = CLASS_GROUP\nthis.resources = nil\n\nif WeakAuras.IsImporting() then\n    local function CheckImport()\n        if WeakAuras.IsImporting() or not this.isImporting then return end\n        \n        this.isImporting:Cancel()\n        this.isImporting = false\n        \n        C_Timer.After(1, function()\n                WeakAuras.ScanEvents(\"LWA_OPTIONS\")\n        end)\n    end\n    \n    this.isImporting = C_Timer.NewTicker(0.5, CheckImport)\nelse\n    this.isImporting = false\nend\n\nlocal function tclone(t1)\n    local t = {}\n    \n    if t1 then\n        for k, v in pairs(t1) do\n            if \"table\" == type(v) then\n                v = tclone(v)\n            end\n            \n            if \"string\" == type(k) then\n                t[k] = v\n            else\n                tinsert(t, v)\n            end\n        end\n    end\n    \n    return t\nend\n\nlocal function tmerge(...)\n    local ts = {...}\n    local t = tclone(ts[1])\n    local t2\n    \n    for i = 2, #ts do\n        t2 = ts[i] or {}\n        \n        for k, v in pairs(t2) do\n            if \"table\" == type(v) then\n                v = tclone(v)\n                \n                if t[k] and #t[k] == 0 then\n                    t[k] = tmerge(t[k], v)\n                else\n                    t[k] = v\n                end\n            else\n                t[k] = v\n            end\n        end\n    end\n    \n    return t\nend\n\nlocal function SetRegionSize(r, w, h)\n    r:SetRegionWidth(w)\n    r:SetRegionHeight(h)\nend\n\nlocal function ResizeAnchorFrame(skipCore)\n    if this.isImporting then return end\n    \n    local config = LWA.GetConfig()\n    local h = max(1, config.core.height + config.core.spacing + config.core.margin + RESOURCES_HEIGHT)\n    \n    if 1 == h % 2 then\n        h = h + 1\n    end\n    \n    SetRegionSize(this.region, MAX_WIDTH, h)\n    \n    local function RepositionGroups()\n        local configs = { config.core, config.utility, config.maintenance }\n        \n        for i, g in ipairs({ CORE_GROUP, UTILITIES_GROUP, MAINTENANCE_GROUP }) do\n            if not (skipCore and CORE_GROUP == g) then\n                g = WeakAuras.GetRegion(g)\n                \n                if g then\n                    g:PositionChildren()\n                    \n                    if 0 == #g.sortedChildren then\n                        g:SetHeight(configs[i].height)\n                        g.currentHeight = configs[i].height\n                    end\n                end\n            end\n        end\n    end\n    \n    if skipCore then\n        C_Timer.After(0.05, RepositionGroups)\n    else\n        RepositionGroups()\n    end\nend\n\nfunction LWA.GetConfig(grp, force)\n    local default = {\n        style = {\n            border_size = 0,\n            border_icons = true,\n            border_resources = true,\n            border_color = { [1] = 0, [2] = 0, [3] = 0, [4] = 1 },\n            zoom = 30,\n        },\n        core = {\n            nb_min = 5,\n            nb_max = 8,\n            width = 48,\n            height = 48,\n            spacing = 3,\n            margin = 0,\n            resources_position = 2, -- Below\n        },\n        utility = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 10,\n            behavior = 2, -- Always Show\n        },\n        top = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 10,\n        },\n        side = {\n            width = 38,\n            height = 38,\n            spacing = 3,\n            margin = 3,\n            grow_direction = 1,\n        },\n        maintenance = {\n            width = 36,\n            height = 36,\n            spacing = 0,\n            margin = 10,\n        },\n        alpha = {\n            global = 100,\n            ooc = 100,\n            ignore_enemy = true,\n            ignore_friendly = true,\n        },\n        resources = {\n            health_bar = {\n                format = 1\n            },\n            mana_bar = {\n                format = 1\n            }\n        },\n    }\n    \n    if force or not config or WeakAuras.IsOptionsOpen() then\n        config = tmerge(\n            default,\n            LWA.configs[\"general\"],\n            LWA.configs[\"class\"] or {}\n        )\n    end\n    \n    if grp then\n        return config[grp] or {}\n    end\n    \n    return config\nend\n\nlocal function UpdateBorder(region, apply)\n    if #region.subRegions > 0 then\n        local config, size, r, g, b, a = LWA.GetConfig(), 0\n        \n        if apply then\n            size = config.style.border_size\n            r, g, b, a = unpack(config.style.border_color)\n        end\n        \n        for _, border in ipairs(region.subRegions) do\n            if \"subborder\" == border.type then\n                border:SetVisible(size > 0)\n                \n                if size > 0 then\n                    local bd = border:GetBackdrop()\n                    bd.edgeSize = size\n                    border:SetBackdrop(bd)\n                    border:SetBorderColor(r, g, b, a)\n                end\n            end\n        end\n    end\nend\n\nlocal throttledInitHandler = nil\nlocal initLastRun = 0\n\nfunction this.ThrottledInit()\n    if throttledInitHandler or this.isImporting then return end\n    \n    local currentTime = time()\n    \n    if initLastRun <= currentTime - 0.5 then\n        throttledInitHandler = C_Timer.NewTimer(0.05, this.Init)\n    else\n        throttledInitHandler = C_Timer.NewTimer(max(0.05, currentTime - initLastRun), this.Init)\n    end\nend\n\nfunction this.Init()\n    if this.isImporting then return end\n    \n    initLastRun = time()\n    \n    local config = LWA.GetConfig(nil, true)\n    local isOptionsOpen = WeakAuras.IsOptionsOpen()\n    local zoom = config.style.zoom / 100\n    \n    if throttledInitHandler then\n        throttledInitHandler:Cancel()\n        throttledInitHandler = nil\n    end\n    \n    if not this.parentFrame then\n        this.parentFrame = WeakAuras.GetRegion(CLASS_GROUP)\n    end\n    \n    if this.parentFrame and not this.parentFrame.SetRealScale then\n        this.parentFrame.SetRealScale = this.parentFrame.SetScale\n        \n        this.parentFrame.SetScale = function(self, scale)\n            this.parentFrame:SetRealScale(scale)\n            local castBar = WeakAuras.GetRegion(CAST_BAR)\n            \n            if castBar then\n                castBar:SetScale(scale)\n            end\n        end\n    end\n    \n    if isOptionsOpen then\n        NB_CORE = config.core.nb_max\n    else\n        NB_CORE = max(4, config.core.nb_min, min(NB_CORE, config.core.nb_max))\n    end\n    \n    MAX_WIDTH = NB_CORE * (config.core.width + config.core.spacing) - config.core.spacing\n    \n    local function InitIcons(group, c, selfPoint)\n        local grpRegion = WeakAuras.GetRegion(group)\n        \n        if not grpRegion then return end\n        \n        local i, isAbilities = 0, CORE_GROUP == group\n        \n        for childId, regions in pairs(grpRegion.controlledChildren) do\n            local region = regions[\"\"] and regions[\"\"].regionData.region\n            \n            i = i + 1\n            \n            if region then\n                region:SetAnchor(selfPoint, region.relativeTo, region.relativePoint)\n                \n                if region.SetZoom then\n                    region:SetZoom(min(1, zoom + (region.extraZoom or 0)))\n                else\n                    print(\"LWA Issue: \" .. CLASS .. \" > \" .. group .. \" > \" .. childId)\n                end\n                \n                if isAbilities and i > NB_CORE then\n                    SetRegionSize(region, config.top.width, config.top.height)\n                else\n                    SetRegionSize(region, c.width, c.height)\n                end\n                \n                UpdateBorder(region, config.style.border_icons)\n            end\n        end\n        \n        if isAbilities then\n            grpRegion:PositionChildren()\n            \n            if not isOptionsOpen then\n                NB_CORE = max(4, config.core.nb_min, min(#grpRegion.sortedChildren, config.core.nb_max))\n                \n                MAX_WIDTH = NB_CORE * (config.core.width + config.core.spacing) - config.core.spacing\n            end\n            \n            this.region:SetRegionWidth(MAX_WIDTH)\n        end\n    end\n    \n    InitIcons(CORE_GROUP, config.core, \"BOTTOM\")\n    InitIcons(UTILITIES_GROUP, config.utility, \"TOP\")\n    InitIcons(MAINTENANCE_GROUP, config.maintenance, \"TOP\")\n    InitIcons(DYNAMIC_EFFECTS_GROUP, config.top, \"BOTTOMRIGHT\")\n    InitIcons(LEFT_SIDE_GROUP, config.side, \"TOPRIGHT\")\n    InitIcons(RIGHT_SIDE_GROUP, config.side, \"TOPLEFT\")\n    \n    this.UpdateResources()\n    \n    for _, g in ipairs({ DYNAMIC_EFFECTS_GROUP, LEFT_SIDE_GROUP, RIGHT_SIDE_GROUP }) do\n        g = WeakAuras.GetRegion(g)\n        \n        if g then\n            g:PositionChildren()\n        end\n    end\nend\n\nfunction this.UpdateResources(resizeOnly)\n    if this.isImporting then return end\n    \n    local config = LWA.GetConfig()\n    \n    local totalHeight, nb = 0, 0\n    local h1 = config.core.height\n    local s1 = config.core.spacing\n    local m1 = config.core.margin\n    local y = 0\n    \n    local grpRegion = WeakAuras.GetRegion(RESOURCES_GROUP)\n    \n    if not this.resources then\n        local grpData = WeakAuras.GetData(RESOURCES_GROUP)\n        \n        this.resources = grpData and grpData.controlledChildren\n    end\n    \n    if grpRegion and this.resources and #this.resources > 0 then\n        if config.core.resources_position == 2 then -- Below\n            y = h1 + s1 + m1\n        end\n        \n        grpRegion:SetOffset(0, -y)\n        \n        local isOptionsOpen = WeakAuras.IsOptionsOpen()\n        local resRegion, isVisible, regionType\n        local w, h = 0, 0\n        \n        local function InitResource(region, index, nb)\n            if not region then return end\n            \n            index = max(1, index or 1)\n            nb = max(1, nb or 1)\n            \n            w, h = MAX_WIDTH, 20\n            \n            if nb > 1 then\n                local s = config.core.spacing\n                \n                w = (w + s) / nb - s\n            end\n            \n            local cg = region.configGroup\n            \n            if cg and config.resources[cg] then\n                h = config.resources[cg].height or 20\n            end\n            \n            SetRegionSize(region, w, h)\n            region.bar:Update()\n            UpdateBorder(region, config.style.border_resources)\n            this.UpdateBar({ region = region }, index, nb)\n            \n            if region.bar.spark then\n                region.bar.spark:SetHeight(max(15, Round(h * 2)))\n            end\n        end\n        \n        y = 0\n        \n        for _, resId in ipairs(this.resources) do\n            resRegion = WeakAuras.GetRegion(resId)\n            \n            if resRegion then\n                isVisible = isOptionsOpen\n                regionType = resRegion.regionType\n                h = 0\n                \n                if \"aurabar\" == regionType then\n                    isVisible = isVisible or resRegion:IsVisible()\n                    InitResource(resRegion)\n                    \n                elseif \"dynamicgroup\" == regionType then\n                    local nbChild = 0\n                    local childRegions = {}\n                    \n                    for _, region in pairs(resRegion.controlledChildren) do\n                        if region and region[\"\"] then\n                            nbChild = nbChild + 1\n                            \n                            childRegions[region[\"\"].regionData.dataIndex] = region[\"\"].regionData.region\n                            \n                            isVisible = isVisible or region[\"\"].regionData.region:IsVisible()\n                        end\n                    end\n                    \n                    for i, region in ipairs(childRegions) do\n                        InitResource(region, i, nbChild)\n                        \n                        region:SetYOffset(-y)\n                    end\n                end\n                \n                if isVisible then\n                    nb = nb + 1\n                    \n                    if isVisible then\n                        if \"dynamicgroup\" == regionType then\n                            resRegion:PositionChildren()\n                        else\n                            resRegion:SetOffset(0, -y)\n                        end\n                    end\n                    \n                    totalHeight = totalHeight + h\n                    y = y + h + s1\n                end\n            end\n        end\n        \n        RESOURCES_HEIGHT = totalHeight + max(nb - 1, 0) * config.core.spacing\n    end\n    \n    if not resizeOnly then\n        ResizeAnchorFrame()\n        \n        local castBar = WeakAuras.GetRegion(CAST_BAR)\n        \n        if castBar then\n            castBar:SetParent(UIParent)\n            \n            if this.parentFrame then\n                castBar:SetScale(this.parentFrame:GetScale())\n            end\n        end\n    end\nend\n\nfunction LWA.GrowCore(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local w1 = config.core.width\n    local h1 = config.core.height\n    local s1 = config.core.spacing\n    local m1 = config.core.margin\n    \n    local maxCore = min(nb, config.core.nb_max)\n    local x, y\n    local xOffset = ((maxCore - 1) * (w1 + s1) / 2)\n    local yOffset = h1 + 1\n    local region\n    \n    if not WeakAuras.IsOptionsOpen() then\n        NB_CORE = max(4, config.core.nb_min, maxCore)\n        \n        local oldWidth = MAX_WIDTH\n        \n        MAX_WIDTH = NB_CORE * (w1 + s1) - s1\n        \n        ResizeAnchorFrame(true)\n        \n        if oldWidth ~= MAX_WIDTH then\n            this.UpdateResources(true)\n        end\n    end\n    \n    if config.core.resources_position == 1 then  -- Above\n        yOffset = h1 + RESOURCES_HEIGHT + s1 + m1\n    end\n    \n    for i, regionData in ipairs(activeRegions) do\n        region = regionData.region\n        \n        x = (i - 1) * (w1 + s1) - xOffset\n        y = -yOffset\n        \n        SetRegionSize(region, w1, h1)\n        \n        newPositions[i] = { x, y }\n        \n        if i == maxCore then break end\n    end\n    \n    local maxOverflow = nb - maxCore\n    \n    if maxOverflow > 0 then\n        local w2 = config.top.width\n        local h2 = config.top.height\n        local s2 = config.top.spacing\n        local m2 = config.top.margin\n        \n        local nbPerRow = math.floor(((MAX_WIDTH / 2) + s2) / (w2 + s2)) or 1\n        local i2, j\n        \n        xOffset = -((MAX_WIDTH - w2) / 2)\n        yOffset = m2 + yOffset - h1 - h2 + max(s1, s2) - s2 - 2\n        \n        if config.core.resources_position == 1 then -- Above\n            yOffset = yOffset - RESOURCES_HEIGHT - s1 - m1\n        end\n        \n        for i, regionData in ipairs(activeRegions) do\n            if i > maxCore then\n                region = regionData.region\n                \n                i2 = i - maxCore\n                j = (i2 % nbPerRow)\n                \n                if j == 1 then\n                    yOffset = yOffset + h2 + s2\n                end\n                \n                if j == 0 then\n                    j = nbPerRow\n                end\n                \n                x = (j - 1) * (w2 + s2) + xOffset\n                y = yOffset\n                \n                SetRegionSize(region, w2, h2)\n                \n                newPositions[i] = { x, y }\n            end\n        end\n    end\nend\n\nfunction LWA.GrowDynamicEffects(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local w = config.top.width\n    local h = config.top.height\n    local s1 = config.core.spacing\n    local s2 = config.top.spacing\n    \n    local xOffset = 0\n    local yOffset = config.top.margin + max(s1, s2) - s2 - h\n    local nbPerRow, m = math.floor(((MAX_WIDTH / 2) + s2) / (w + s2)) or 1\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = 0\n            yOffset = yOffset + h + s2\n        end\n        \n        newPositions[i] = { -xOffset, yOffset }\n        \n        xOffset = xOffset + w + s2\n    end\nend\n\nfunction LWA.GrowLeftSide(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s1 = config.core.spacing\n    \n    local w2 = config.side.width\n    local h2 = config.side.height\n    local s2 = config.side.spacing\n    \n    local x, y\n    local xOffset = config.side.margin + max(s1, s2)\n    local yOffset = 0\n    \n    if config.side.grow_direction == 2 then -- Upward\n        yOffset = -(h2 + s2 + config.top.margin)\n    end\n    \n    for i, _ in ipairs(activeRegions) do\n        x = -xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n        \n        if config.side.grow_direction == 3 then -- Horizontal\n            xOffset = xOffset + w2 + s2\n            \n        elseif config.side.grow_direction == 2 then -- Upward\n            yOffset = -(-yOffset + h2 + s2)\n        else\n            yOffset = yOffset + h2 + s2\n        end\n    end\nend\n\nfunction LWA.GrowRightSide(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s1 = config.core.spacing\n    \n    local w2 = config.side.width\n    local h2 = config.side.height\n    local s2 = config.side.spacing\n    \n    local x, y\n    local xOffset = config.side.margin + max(s1, s2)\n    local yOffset = 0\n    \n    if config.side.grow_direction == 2 then -- Upward\n        yOffset = -(h2 + s2 + config.top.margin)\n    end\n    \n    for i, _ in ipairs(activeRegions) do\n        x = xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n        \n        if config.side.grow_direction == 3 then -- Horizontal\n            xOffset = xOffset + w2 + s2\n            \n        elseif config.side.grow_direction == 2 then -- Upward\n            yOffset = -(-yOffset + h2 + s2)\n        else\n            yOffset = yOffset + h2 + s2\n        end\n    end\nend\n\nfunction LWA.GrowUtilities(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local maxCore = min(nb, NB_CORE)\n    \n    local w1 = config.core.width\n    local s1 = config.core.spacing\n    \n    local w2 = config.utility.width\n    local h2 = config.utility.height\n    local s2 = config.utility.spacing\n    \n    local x, y\n    local xOffset = (maxCore - 1) * (w1 + s1) / 2\n    local yOffset = config.utility.margin + max(s1, s2) - s2 - h2\n    \n    local nbPerRow = math.floor((MAX_WIDTH + s2) / (w2 + s2)) or 1\n    local m\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = (min(nb - i, nbPerRow - 1)) * (w2 + s2) / 2\n            yOffset = yOffset + h2 + s2\n        end\n        \n        if m == 0 then\n            m = nbPerRow\n        end\n        \n        x = (m - 1) * (w2 + s2) - xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n    end\nend\n\nfunction LWA.GrowMaintenance(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local maxCore = min(nb, NB_CORE)\n    \n    local w1 = config.core.width\n    local s1 = config.core.spacing\n    \n    local w2 = config.maintenance.width\n    local h2 = config.maintenance.height\n    local s2 = config.maintenance.spacing\n    \n    local x, y\n    local xOffset = (maxCore - 1) * (w1 + s1) / 2\n    local yOffset = config.maintenance.margin + config.utility.margin + max(config.utility.spacing, s2) - s2 - h2\n    \n    local nbPerRow = math.floor((MAX_WIDTH + s2) / (w2 + s2)) or 1\n    local m\n    \n    for i, _ in ipairs(activeRegions) do\n        m = (i % nbPerRow)\n        \n        if m == 1 then\n            xOffset = (min(nb - i, nbPerRow - 1)) * (w2 + s2) / 2\n            yOffset = yOffset + h2 + s2\n        end\n        \n        if m == 0 then\n            m = nbPerRow\n        end\n        \n        x = (m - 1) * (w2 + s2) - xOffset\n        y = -yOffset\n        \n        newPositions[i] = { x, y }\n    end\nend\n\nlocal function MixRGB(c1, c2, pos)\n    pos = 1 - (pos or 0.5)\n    \n    return {\n        (c1[1] * pos) + (c2[1] * (1 - pos)),\n        (c1[2] * pos) + (c2[2] * (1 - pos)),\n        (c1[3] * pos) + (c2[3] * (1 - pos)),\n        (c1[4] * pos) + (c2[4] * (1 - pos))\n    }\nend\n\nfunction this.UpdateBar(aura, i, nb)\n    local config = LWA.GetConfig(\"resources\")\n    local e = aura or aura_env\n    local region = e.region\n    local cg = region.configGroup\n    \n    if not (region and cg and config[cg]) then return end\n    \n    cg = config[cg]\n    \n    local cs = region.colorState or \"\"\n    \n    if cs ~= \"\" then\n        cs = cs .. \"_\"\n    end\n    \n    i = max(1, region.index or i or 1)\n    nb = max(1, region.indexMax or nb or 1)\n    \n    local c1, c2 = cg[cs .. \"color1\"], cg[cs .. \"color2\"]\n    local bar = region.bar\n    \n    if c1 and c2 then\n        if cg[cs .. \"gradient\"] and cg[cs .. \"gradient\"] < 3 then\n            if nb > 1 and 1 == cg[cs .. \"gradient\"] then\n                local cc1, cc2 = c1, c2\n                \n                if i > 1 then\n                    c1 = MixRGB(cc1, cc2, (i - 1) / nb)\n                end\n                \n                c2 = MixRGB(cc1, cc2, i / nb)\n            end\n            \n            local orientation = \"HORIZONTAL\"\n            \n            if 2 == cg[cs .. \"gradient\"] then\n                orientation = \"VERTICAL\"\n                \n                local tmp = c1\n                c1 = c2\n                c2 = tmp\n            end\n            \n            bar.fg:SetGradient(orientation, CreateColor(unpack(c1)), CreateColor(unpack(c2)))\n        else\n            bar:SetForegroundColor(unpack(c1))\n        end\n        \n        if region.ot then\n            region.ot:SetColorTexture(unpack(c2))\n        end\n    end\nend\n\nfunction LWA.GrowDynamicResource(newPositions, activeRegions)\n    local nb = #activeRegions\n    \n    if nb <= 0 then return end\n    \n    local config = LWA.GetConfig()\n    \n    local s = config.core.spacing\n    local w = (MAX_WIDTH + s) / nb\n    local xOffset, x = (MAX_WIDTH - w + s) / 2\n    \n    for i, regionData in ipairs(activeRegions) do\n        x = (i - 1) * w - xOffset\n        \n        if not this.isImporting then\n            regionData.region:SetRegionWidth(w - s)\n            this.UpdateBar({ region = regionData.region }, i, nb)\n            regionData.region.bar:Update()\n        end\n        \n        newPositions[i] = { x, 0 }\n    end\nend\n\nlocal function round(num, decimals)\n    local mult = 10^(decimals or 0)\n    \n    return Round(num * mult) / mult\nend\n\nlocal barFormats = {\n    \"value\",\n    \"kvalue\",\n    \"value (percent%)\",\n    \"kvalue (percent%)\",\n    \"percent%\",\n}\n\nfunction LWA.UpdateBarText(value, percent, format)\n    local text = barFormats[format] or \"value\"\n    \n    text = text:gsub(\"percent\", round(percent, 0))\n    \n    if 2 == format or 4 == format then\n        local rem = math.fmod(value, 1000) or 0\n        \n        if rem >= 950 then\n            rem = 0\n        end\n        \n        text = text:gsub(\"kvalue\", FormatLargeNumber(Round((value - rem) / 1000)) .. \".\" .. Round(rem / 100) .. \"K\"):gsub(\"%.0K\", \"K\"):gsub(\"%.\", DECIMAL_SEPERATOR)\n    else\n        text = text:gsub(\"value\", value)\n    end\n    \n    return text\nend",
           "do_custom": true
         },
         "start": []
@@ -2825,7 +2825,7 @@
       "parent": "Luxthos - Shaman",
       "regionType": "icon",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -2836,12 +2836,12 @@
       "triggers": {
         "1": {
           "trigger": {
-            "custom": "function(event, ...)\n    local arg1, arg2 = ...\n    local LWA = LWA[aura_env.CLASS]\n    local valid = false\n    \n    if \"OPTIONS\" == event then\n        LWA.ThrottledInit()\n        \n    elseif \"PLAYER_ENTERING_WORLD\" == event and (arg1 or arg2) then\n        C_Timer.After(0.05, LWA.Init)\n        C_Timer.After(1, LWA.ThrottledInit)\n        \n    elseif \"UNIT_PET\" == event or \"UNIT_ENTERED_VEHICLE\" == event or \"UNIT_EXITED_VEHICLE\" == event then\n        valid = (\"player\" == arg1)\n        \n    elseif \"UNIT_HEALTH\" == event then\n        valid = (\"pet\" == arg1)\n        \n    elseif \"LWA_UPDATE_BAR\" == event and arg1 then\n        aura_env.UpdateBar(...)\n    else\n        valid = true\n    end\n    \n    if valid then\n        C_Timer.After(0.05, aura_env.UpdateResources)\n    end\nend",
+            "custom": "function(event, ...)\n    local arg1, arg2 = ...\n    local valid = false\n    \n    if \"OPTIONS\" == event or \"LWA_OPTIONS\" == event then\n        aura_env.ThrottledInit()\n        \n    elseif \"PLAYER_ENTERING_WORLD\" == event and (arg1 or arg2) then\n        C_Timer.After(0.05, aura_env.Init)\n        C_Timer.After(1, aura_env.ThrottledInit)\n        \n    elseif \"UNIT_PET\" == event or \"UNIT_ENTERED_VEHICLE\" == event or \"UNIT_EXITED_VEHICLE\" == event then\n        valid = (\"player\" == arg1)\n        \n    elseif \"UNIT_HEALTH\" == event then\n        valid = (\"pet\" == arg1)\n        \n    elseif \"LWA_UPDATE_BAR\" == event and arg1 then\n        aura_env.UpdateBar(...)\n    else\n        valid = true\n    end\n    \n    if valid then\n        C_Timer.After(0.05, aura_env.UpdateResources)\n    end\nend",
             "custom_hide": "custom",
             "custom_type": "event",
             "debuffType": "HELPFUL",
             "event": "GTFO",
-            "events": "OPTIONS,PLAYER_ENTERING_WORLD,PLAYER_SPECIALIZATION_CHANGED,UPDATE_SHAPESHIFT_FORM,PLAYER_TALENT_UPDATE,PLAYER_PVP_TALENT_UPDATE,PLAYER_LEVEL_UP,UNIT_PET,UNIT_ENTERED_VEHICLE,UNIT_EXITED_VEHICLE,UNIT_HEALTH,CINEMATIC_STOP,STOP_MOVIE,CLIENT_SCENE_CLOSED,TRAIT_CONFIG_CREATED,TRAIT_CONFIG_UPDATED,TRAIT_TREE_CHANGED,LWA_UPDATE_BAR",
+            "events": "OPTIONS,LWA_OPTIONS,PLAYER_ENTERING_WORLD,PLAYER_SPECIALIZATION_CHANGED,UPDATE_SHAPESHIFT_FORM,PLAYER_TALENT_UPDATE,PLAYER_PVP_TALENT_UPDATE,PLAYER_LEVEL_UP,UNIT_PET:player,UNIT_ENTERED_VEHICLE:player,UNIT_EXITED_VEHICLE:player,UNIT_HEALTH:pet,CINEMATIC_STOP,STOP_MOVIE,CLIENT_SCENE_CLOSED,TRAIT_CONFIG_CREATED,TRAIT_CONFIG_UPDATED,TRAIT_TREE_CHANGED,LWA_UPDATE_BAR",
             "names": [],
             "spellIds": [],
             "subeventPrefix": "SPELL",
@@ -2871,7 +2871,7 @@
         "3": {
           "trigger": {
             "check": "event",
-            "custom": "function(event)\n    local LWA = LWA[aura_env.CLASS]\n    \n    LWA.ThrottledInit()\n    C_Timer.After(1, LWA.Init)\nend",
+            "custom": "function(event)\n    if \"STATUS\" == event then\n        aura_env.resources = nil\n        \n        C_Timer.After(0.05, function()\n                WeakAuras.ScanEvents(\"LWA_OPTIONS\")\n        end)\n    end\nend",
             "custom_hide": "timed",
             "custom_type": "status",
             "debuffType": "HELPFUL",
@@ -2897,9 +2897,9 @@
         "disjunctive": "any"
       },
       "uid": "KK3ws7xr3YH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -3021,7 +3021,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "BOTTOMRIGHT",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Crackling Surge": false,
@@ -3067,9 +3067,9 @@
         }
       ],
       "uid": "O0xhuN0GtgC",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -3249,7 +3249,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -3355,9 +3355,9 @@
         "disjunctive": "any"
       },
       "uid": "Seg77YIO4bb",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -3733,7 +3733,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -3799,9 +3799,9 @@
         "disjunctive": "any"
       },
       "uid": "TuKOneMMl8H",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -4196,7 +4196,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -4299,9 +4299,9 @@
         "disjunctive": "any"
       },
       "uid": "h0WnRwrcdAk",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -4677,7 +4677,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -4743,9 +4743,9 @@
         "disjunctive": "any"
       },
       "uid": "iupxIC0eTmz",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -5121,7 +5121,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -5187,9 +5187,9 @@
         "disjunctive": "any"
       },
       "uid": "Ll4dZ(x6oz9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -5569,7 +5569,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -5674,9 +5674,9 @@
         "disjunctive": "any"
       },
       "uid": "uXC7Nw(cQRq",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6075,7 +6075,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -6161,9 +6161,9 @@
         "disjunctive": "any"
       },
       "uid": "IVzBqeK2N9l",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6273,7 +6273,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -6376,9 +6376,9 @@
         "disjunctive": "any"
       },
       "uid": "CwEKSpArt7B",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6755,7 +6755,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -6821,9 +6821,9 @@
         "disjunctive": "any"
       },
       "uid": "XKtSA6Yvh7h",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6933,7 +6933,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -7036,9 +7036,9 @@
         "disjunctive": "any"
       },
       "uid": "bm9tXyyTjS0",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7148,7 +7148,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -7251,9 +7251,9 @@
         "disjunctive": "any"
       },
       "uid": "oBMwSLY4I(a",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7640,7 +7640,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -7746,9 +7746,9 @@
         "disjunctive": "any"
       },
       "uid": "5Bl1C9X25oy",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7859,7 +7859,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -7925,9 +7925,9 @@
         "disjunctive": "any"
       },
       "uid": "hFroSZnLAKD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8038,7 +8038,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -8104,9 +8104,9 @@
         "disjunctive": "any"
       },
       "uid": "3CwE4HNN7fx",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8217,7 +8217,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -8283,9 +8283,9 @@
         "disjunctive": "any"
       },
       "uid": ")saLPdq6y2y",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8396,7 +8396,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -8462,9 +8462,9 @@
         "disjunctive": "any"
       },
       "uid": ")Xdp0b7BC2C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8575,7 +8575,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -8641,9 +8641,9 @@
         "disjunctive": "any"
       },
       "uid": "fDSo0V5Olu2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8755,7 +8755,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -8858,9 +8858,9 @@
         "disjunctive": "any"
       },
       "uid": "pskTklAly9e",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8971,7 +8971,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -9037,9 +9037,9 @@
         "disjunctive": "any"
       },
       "uid": "q5bqqhp)MvQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9150,7 +9150,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -9216,9 +9216,9 @@
         "disjunctive": "any"
       },
       "uid": "m2F2PxjOit4",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9330,7 +9330,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -9433,9 +9433,9 @@
         "disjunctive": "any"
       },
       "uid": "m9T2M7e)nqJ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9542,7 +9542,7 @@
       ],
       "customGrow": "function(newPositions, activeRegions)\n    local LWA = LWA and LWA[\"Shaman\"] or {}\n\n    if LWA and LWA.GrowCore then\n        LWA.GrowCore(newPositions, activeRegions)\n    end\nend",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
-      "frameStrata": 4,
+      "frameStrata": 3,
       "fullCircle": true,
       "gridType": "RD",
       "gridWidth": 5,
@@ -9574,7 +9574,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "BOTTOM",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Ascendance (Elemental)": false,
@@ -9639,9 +9639,9 @@
         }
       ],
       "uid": "5OrCag44X1D",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -9849,7 +9849,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -9956,9 +9956,9 @@
         "activeTriggerMode": -10
       },
       "uid": "F1OBy2nCK94",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -10199,7 +10199,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -10368,9 +10368,9 @@
         "disjunctive": "custom"
       },
       "uid": "HISKE)bkl(H",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -10611,7 +10611,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -10821,9 +10821,9 @@
         "disjunctive": "any"
       },
       "uid": "lApigDnejMG",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11007,7 +11007,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -11128,9 +11128,9 @@
         "disjunctive": "any"
       },
       "uid": "TiA1VyRPhws",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11326,7 +11326,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -11414,9 +11414,9 @@
         "disjunctive": "any"
       },
       "uid": "tuxSgp7SA3g",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11582,7 +11582,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -11651,9 +11651,9 @@
         "activeTriggerMode": -10
       },
       "uid": "xo(DqS95rlr",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11819,7 +11819,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -11888,9 +11888,9 @@
         "activeTriggerMode": -10
       },
       "uid": "7C55R0Idb4S",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -12051,7 +12051,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -12139,9 +12139,9 @@
         "disjunctive": "any"
       },
       "uid": "eEN1k7YzXmI",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -12393,7 +12393,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -12552,9 +12552,9 @@
         "disjunctive": "any"
       },
       "uid": "RyxJ3u84jFF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -12755,7 +12755,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -12868,9 +12868,9 @@
         "disjunctive": "any"
       },
       "uid": "D3K6FpE8DA7",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13071,7 +13071,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -13184,9 +13184,9 @@
         "disjunctive": "any"
       },
       "uid": "Sh(pGtAX8N6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13385,7 +13385,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -13498,9 +13498,9 @@
         "disjunctive": "any"
       },
       "uid": "u1lJcSHTXk)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13661,7 +13661,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -13749,9 +13749,9 @@
         "disjunctive": "any"
       },
       "uid": "jx9N5t91vcD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13952,7 +13952,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -14065,9 +14065,9 @@
         "disjunctive": "any"
       },
       "uid": "K6tPPrmLaVa",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14497,7 +14497,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -14623,9 +14623,9 @@
         "disjunctive": "any"
       },
       "uid": "quHatVIrHP2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14877,7 +14877,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -15022,9 +15022,9 @@
         "disjunctive": "any"
       },
       "uid": "a0pof7yw6w(",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -15292,7 +15292,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -15465,9 +15465,9 @@
         "disjunctive": "any"
       },
       "uid": "BWjhHwis97R",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -15707,7 +15707,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -15854,9 +15854,9 @@
         "disjunctive": "any"
       },
       "uid": "YnT645Y(XVH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16072,7 +16072,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -16207,9 +16207,9 @@
         "disjunctive": "any"
       },
       "uid": "6lb)8u72Z(u",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16392,7 +16392,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -16515,9 +16515,9 @@
         "disjunctive": "any"
       },
       "uid": "WVxrGSirDqj",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16735,7 +16735,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -16824,9 +16824,9 @@
         "disjunctive": "any"
       },
       "uid": "xkjkjjvBDFg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -17084,7 +17084,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -17236,9 +17236,9 @@
         "disjunctive": "custom"
       },
       "uid": "tp24scFGqNF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -17496,7 +17496,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -17630,9 +17630,9 @@
         "disjunctive": "any"
       },
       "uid": "ZP6EsZf)Qj9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -17871,7 +17871,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -18029,9 +18029,9 @@
         "disjunctive": "any"
       },
       "uid": "O05erGveHaY",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18197,7 +18197,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -18266,9 +18266,9 @@
         "activeTriggerMode": -10
       },
       "uid": "v1dKJaswBFk",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18503,7 +18503,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -18650,9 +18650,9 @@
         "disjunctive": "any"
       },
       "uid": "WMleweqhZ5w",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18813,7 +18813,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -18901,9 +18901,9 @@
         "disjunctive": "any"
       },
       "uid": "HtzSiO6sMjF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19064,7 +19064,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -19153,9 +19153,9 @@
         "disjunctive": "any"
       },
       "uid": "zYcMDwOmVtB",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19316,7 +19316,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -19404,9 +19404,9 @@
         "disjunctive": "any"
       },
       "uid": "ewSg5MhH(cU",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19646,7 +19646,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -19793,9 +19793,9 @@
         "disjunctive": "any"
       },
       "uid": "LXqqLPmGs5z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -20046,7 +20046,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -20174,9 +20174,9 @@
         "disjunctive": "any"
       },
       "uid": "kjtqgaErOBF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -20507,7 +20507,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -20669,9 +20669,9 @@
         "disjunctive": "any"
       },
       "uid": "RZGNpuPb7yv",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -20846,7 +20846,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -20925,9 +20925,9 @@
         "disjunctive": "any"
       },
       "uid": "hYqhDIMFV9d",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -21146,7 +21146,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -21272,9 +21272,9 @@
         "disjunctive": "any"
       },
       "uid": "9Sijs6FZoQE",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -21741,7 +21741,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -21854,9 +21854,9 @@
         "disjunctive": "any"
       },
       "uid": "toA7xoJBAiy",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22091,7 +22091,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -22238,9 +22238,9 @@
         "disjunctive": "any"
       },
       "uid": "6cyF7kMGJ(Y",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22439,7 +22439,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -22565,9 +22565,9 @@
         "disjunctive": "any"
       },
       "uid": "mcDoz0GrE7K",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22728,7 +22728,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -22816,9 +22816,9 @@
         "disjunctive": "any"
       },
       "uid": "CDMZD3fMA5C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22981,7 +22981,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -23094,9 +23094,9 @@
         "disjunctive": "any"
       },
       "uid": "16JNieKB6Q2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -23277,7 +23277,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -23488,9 +23488,9 @@
         "disjunctive": "any"
       },
       "uid": "D2Gqm1Viluf",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -23588,7 +23588,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOPRIGHT",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -23612,9 +23612,9 @@
         }
       ],
       "uid": "RpFpJXVg7fu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -23710,7 +23710,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOPLEFT",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -23734,9 +23734,9 @@
         }
       ],
       "uid": "H)1hJveFxZ)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -23861,7 +23861,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Ancestral Guidance": false,
@@ -23913,9 +23913,9 @@
         }
       ],
       "uid": "QWjdiQVgBgl",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -24373,7 +24373,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -24468,9 +24468,9 @@
         "disjunctive": "custom"
       },
       "uid": "ja3j)xst2SC",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -24933,7 +24933,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -25028,9 +25028,9 @@
         "disjunctive": "custom"
       },
       "uid": "MravrZQ(qBT",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -25494,7 +25494,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -25589,9 +25589,9 @@
         "disjunctive": "custom"
       },
       "uid": "anFjYOXxXvc",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -26081,7 +26081,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -26194,9 +26194,9 @@
         "disjunctive": "custom"
       },
       "uid": "RF4gKzczYaO",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -26634,7 +26634,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -26729,9 +26729,9 @@
         "disjunctive": "custom"
       },
       "uid": "3(G4DhyPq(O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -27221,7 +27221,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -27334,9 +27334,9 @@
         "disjunctive": "custom"
       },
       "uid": "pxrb1qiA8cu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -27806,7 +27806,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -27922,9 +27922,9 @@
         "disjunctive": "custom"
       },
       "uid": "eLhxGiRt)Hf",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -28394,7 +28394,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -28510,9 +28510,9 @@
         "disjunctive": "custom"
       },
       "uid": "H6tbbgXB(E6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -28982,7 +28982,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -29098,9 +29098,9 @@
         "disjunctive": "custom"
       },
       "uid": "VKtlmRjE6xD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -29592,7 +29592,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -29687,9 +29687,9 @@
         "disjunctive": "custom"
       },
       "uid": "1UT0om(5IAq",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -30154,7 +30154,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -30267,9 +30267,9 @@
         "disjunctive": "custom"
       },
       "uid": "a)ue3hhArK8",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -30734,7 +30734,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -30849,9 +30849,9 @@
         "disjunctive": "custom"
       },
       "uid": "c1K5KYyl6(A",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -31320,7 +31320,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -31462,9 +31462,9 @@
         "disjunctive": "custom"
       },
       "uid": "0dbsutw39Wm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -31964,7 +31964,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -32077,9 +32077,9 @@
         "disjunctive": "custom"
       },
       "uid": "uAERmptweWV",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -32552,7 +32552,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -32647,9 +32647,9 @@
         "disjunctive": "custom"
       },
       "uid": "Jkaji89qeW2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -33087,7 +33087,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -33182,9 +33182,9 @@
         "disjunctive": "custom"
       },
       "uid": "8))8ZR)eiTA",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -33649,7 +33649,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -33762,9 +33762,9 @@
         "disjunctive": "custom"
       },
       "uid": ")DcLrRhqqtc",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -34229,7 +34229,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -34342,9 +34342,9 @@
         "disjunctive": "custom"
       },
       "uid": "iqMIL8l5LtN",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -34780,7 +34780,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -34875,9 +34875,9 @@
         "disjunctive": "custom"
       },
       "uid": "PVHySnqlK3C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -35315,7 +35315,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -35410,9 +35410,9 @@
         "disjunctive": "custom"
       },
       "uid": "9ssEqZPW((q",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -35885,7 +35885,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -36027,9 +36027,9 @@
         "disjunctive": "custom"
       },
       "uid": "FYHKzkFYghM",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -36499,7 +36499,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -36641,9 +36641,9 @@
         "disjunctive": "custom"
       },
       "uid": "JWS1fkvXb1B",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -37113,7 +37113,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -37255,9 +37255,9 @@
         "disjunctive": "custom"
       },
       "uid": "BP1Re22NFtm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -37727,7 +37727,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -37869,9 +37869,9 @@
         "disjunctive": "custom"
       },
       "uid": "ONUMuVAYwEh",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -38341,7 +38341,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -38483,9 +38483,9 @@
         "disjunctive": "custom"
       },
       "uid": "pBe1zxrS60)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -38955,7 +38955,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -39097,9 +39097,9 @@
         "disjunctive": "custom"
       },
       "uid": "rvwxbNpCi7l",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -39572,7 +39572,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -39714,9 +39714,9 @@
         "disjunctive": "custom"
       },
       "uid": "oqu)yZ0jSbQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -39829,7 +39829,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Bloodlust": false,
@@ -39867,9 +39867,9 @@
         }
       ],
       "uid": "EGzMxLejNbm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -40377,7 +40377,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -40503,9 +40503,9 @@
         "disjunctive": "custom"
       },
       "uid": "dNeq505jlKS",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -41018,7 +41018,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -41144,9 +41144,9 @@
         "disjunctive": "custom"
       },
       "uid": "99qYAMXeAuj",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -41635,7 +41635,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -41780,9 +41780,9 @@
         "disjunctive": "custom"
       },
       "uid": "WHYVXxZkJs4",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -42271,7 +42271,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -42443,9 +42443,9 @@
         "disjunctive": "custom"
       },
       "uid": "F3SZ7QF0Yz9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -42934,7 +42934,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -43106,9 +43106,9 @@
         "disjunctive": "custom"
       },
       "uid": "JXOzka5GJ4j",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -43597,7 +43597,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -43769,9 +43769,9 @@
         "disjunctive": "custom"
       },
       "uid": "YiH9kld70qA",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -44260,7 +44260,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -44420,9 +44420,9 @@
         "disjunctive": "custom"
       },
       "uid": "diGZ5EJgl8Z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -44910,7 +44910,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -45057,9 +45057,9 @@
         "disjunctive": "custom"
       },
       "uid": "noAYUsJnqWz",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -45436,7 +45436,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -45539,9 +45539,9 @@
         "disjunctive": "all"
       },
       "uid": "18QyCeVNrGH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -45910,7 +45910,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -45985,9 +45985,9 @@
         "activeTriggerMode": -10
       },
       "uid": "jQ1kGrh46i6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -46356,7 +46356,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -46420,9 +46420,9 @@
         "activeTriggerMode": -10
       },
       "uid": "mzaKQE5dnSP",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -46605,7 +46605,7 @@
               {
                 "trigger": 2,
                 "value": 0,
-                "variable": "onCooldown"
+                "variable": "show"
               },
               {
                 "trigger": 3,
@@ -46928,7 +46928,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -47044,9 +47044,9 @@
         "disjunctive": "any"
       },
       "uid": "gIcAcd)Uk8O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -47229,7 +47229,7 @@
               {
                 "trigger": 2,
                 "value": 0,
-                "variable": "onCooldown"
+                "variable": "show"
               },
               {
                 "trigger": 3,
@@ -47552,7 +47552,7 @@
       "parent": "Maintenance - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [
         {
@@ -47669,9 +47669,9 @@
         "disjunctive": "any"
       },
       "uid": "hLr752KNL)I",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useCooldownModRate": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -47741,7 +47741,7 @@
       ],
       "customAnchor": "",
       "desc": "Made by Luxthos - twitch.tv/luxthos",
-      "frameStrata": 3,
+      "frameStrata": 1,
       "id": "Resources - LWA - Shaman",
       "information": {
         "forceEvents": true
@@ -47765,7 +47765,7 @@
       "regionType": "group",
       "scale": 1,
       "selfPoint": "CENTER",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "source": "import",
       "subRegions": [],
       "tocversion": 100002,
@@ -47785,8 +47785,8 @@
         }
       ],
       "uid": "51(xfH4ZEsD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
-      "version": 53,
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -48177,7 +48177,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -48289,10 +48289,10 @@
         "activeTriggerMode": 1
       },
       "uid": "fASSAy0(H6O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -48513,7 +48513,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -48774,10 +48774,10 @@
         "disjunctive": "any"
       },
       "uid": "CJJ4wK3ccGu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -48904,7 +48904,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -49011,10 +49011,10 @@
         "activeTriggerMode": 1
       },
       "uid": "EOFjJvczcg8",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -49115,7 +49115,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Maelstrom Weapon 1": false,
@@ -49145,9 +49145,9 @@
         }
       ],
       "uid": "5yjzt)zsrW0",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -49332,7 +49332,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -49466,10 +49466,10 @@
         "disjunctive": "any"
       },
       "uid": "AyoaLbw(7om",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -49654,7 +49654,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -49788,10 +49788,10 @@
         "disjunctive": "any"
       },
       "uid": "8Ya4Vsu)bTQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -49976,7 +49976,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -50150,10 +50150,10 @@
         "disjunctive": "any"
       },
       "uid": "HYrtnXI65()",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -50338,7 +50338,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -50472,10 +50472,10 @@
         "disjunctive": "any"
       },
       "uid": "H(ak)vfFmNg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -50642,7 +50642,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -50776,10 +50776,10 @@
         "disjunctive": "any"
       },
       "uid": ")A9ArwZHxcp",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -50915,7 +50915,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -51021,10 +51021,10 @@
         "disjunctive": "any"
       },
       "uid": "d3E5AeBcseg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -51122,7 +51122,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "sort": "none",
       "sortHybridTable": {
         "Lava Burst 1": false,
@@ -51149,9 +51149,9 @@
         }
       ],
       "uid": "P45R)teXF63",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useLimit": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -51581,7 +51581,7 @@
       "parent": "Lava Burst - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -51700,10 +51700,10 @@
         "disjunctive": "any"
       },
       "uid": "1WH8TFTVy1z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -52132,7 +52132,7 @@
       "parent": "Lava Burst - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -52251,10 +52251,10 @@
         "disjunctive": "any"
       },
       "uid": "DPD1bDVV17h",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -52675,7 +52675,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -52742,10 +52742,10 @@
         "activeTriggerMode": 1
       },
       "uid": "E18pl6tbGp9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -53190,7 +53190,6 @@
         "use_class_and_spec": false,
         "use_never": false,
         "use_petbattle": false,
-        "use_vehicleUi": false,
         "zoneIds": ""
       },
       "orientation": "HORIZONTAL",
@@ -53231,7 +53230,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.13",
+      "semver": "3.0.14",
       "smoothProgress": false,
       "source": "import",
       "spark": true,
@@ -53403,10 +53402,10 @@
         "disjunctive": "any"
       },
       "uid": "V0BPv(KUpQW",
-      "url": "https://wago.io/LuxthosShamanDragonflight/53",
+      "url": "https://wago.io/LuxthosShamanDragonflight/54",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 53,
+      "version": 54,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -53500,7 +53499,7 @@
     "regionType": "group",
     "scale": 1,
     "selfPoint": "CENTER",
-    "semver": "3.0.13",
+    "semver": "3.0.14",
     "source": "import",
     "subRegions": [],
     "tocversion": 100002,
@@ -53520,8 +53519,8 @@
       }
     ],
     "uid": "oxNB7E4Uhm4",
-    "url": "https://wago.io/LuxthosShamanDragonflight/53",
-    "version": 53,
+    "url": "https://wago.io/LuxthosShamanDragonflight/54",
+    "version": 54,
     "wagoID": "Hkc9ktj4X",
     "xOffset": 0,
     "yOffset": -170
