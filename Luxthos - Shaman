@@ -1300,7 +1300,7 @@
       "parent": "Luxthos - Shaman",
       "regionType": "icon",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -1331,9 +1331,9 @@
         "disjunctive": "any"
       },
       "uid": "PHmqEDiEKU5",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 1,
       "xOffset": 0,
@@ -2825,7 +2825,7 @@
       "parent": "Luxthos - Shaman",
       "regionType": "icon",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -2897,9 +2897,9 @@
         "disjunctive": "any"
       },
       "uid": "KK3ws7xr3YH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -3027,7 +3027,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "BOTTOMRIGHT",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": {
         "Crackling Surge": false,
@@ -3073,9 +3073,9 @@
         }
       ],
       "uid": "O0xhuN0GtgC",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -3255,7 +3255,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -3361,9 +3361,9 @@
         "disjunctive": "any"
       },
       "uid": "Seg77YIO4bb",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -3740,7 +3740,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -3806,9 +3806,9 @@
         "disjunctive": "any"
       },
       "uid": "TuKOneMMl8H",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -4203,7 +4203,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -4306,9 +4306,9 @@
         "disjunctive": "any"
       },
       "uid": "h0WnRwrcdAk",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -4684,7 +4684,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -4750,9 +4750,9 @@
         "disjunctive": "any"
       },
       "uid": "iupxIC0eTmz",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -5128,7 +5128,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -5194,9 +5194,9 @@
         "disjunctive": "any"
       },
       "uid": "Ll4dZ(x6oz9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -5576,7 +5576,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -5681,9 +5681,9 @@
         "disjunctive": "any"
       },
       "uid": "uXC7Nw(cQRq",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6082,7 +6082,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -6168,9 +6168,9 @@
         "disjunctive": "any"
       },
       "uid": "IVzBqeK2N9l",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6280,7 +6280,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -6383,9 +6383,9 @@
         "disjunctive": "any"
       },
       "uid": "CwEKSpArt7B",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6762,7 +6762,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -6828,9 +6828,9 @@
         "disjunctive": "any"
       },
       "uid": "XKtSA6Yvh7h",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -6940,7 +6940,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -7043,9 +7043,9 @@
         "disjunctive": "any"
       },
       "uid": "bm9tXyyTjS0",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7155,7 +7155,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -7258,9 +7258,9 @@
         "disjunctive": "any"
       },
       "uid": "oBMwSLY4I(a",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7647,7 +7647,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -7753,9 +7753,9 @@
         "disjunctive": "any"
       },
       "uid": "5Bl1C9X25oy",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -7866,7 +7866,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -7932,9 +7932,9 @@
         "disjunctive": "any"
       },
       "uid": "hFroSZnLAKD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8045,7 +8045,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -8111,9 +8111,9 @@
         "disjunctive": "any"
       },
       "uid": "3CwE4HNN7fx",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8224,7 +8224,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -8290,9 +8290,9 @@
         "disjunctive": "any"
       },
       "uid": ")saLPdq6y2y",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8403,7 +8403,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -8469,9 +8469,9 @@
         "disjunctive": "any"
       },
       "uid": ")Xdp0b7BC2C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8582,7 +8582,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -8648,9 +8648,9 @@
         "disjunctive": "any"
       },
       "uid": "fDSo0V5Olu2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8762,7 +8762,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -8865,9 +8865,9 @@
         "disjunctive": "any"
       },
       "uid": "pskTklAly9e",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -8991,7 +8991,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -9094,9 +9094,9 @@
         "disjunctive": "any"
       },
       "uid": "NpUszSdx(3e",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9207,7 +9207,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -9273,9 +9273,9 @@
         "disjunctive": "any"
       },
       "uid": "q5bqqhp)MvQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9386,7 +9386,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -9452,9 +9452,9 @@
         "disjunctive": "any"
       },
       "uid": "m2F2PxjOit4",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -9566,7 +9566,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -9669,9 +9669,9 @@
         "disjunctive": "any"
       },
       "uid": "m9T2M7e)nqJ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -10050,7 +10050,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -10137,9 +10137,9 @@
         "disjunctive": "all"
       },
       "uid": "Fq3UiBydImH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -10519,7 +10519,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -10643,9 +10643,9 @@
         "disjunctive": "all"
       },
       "uid": "67vtzNpk5bq",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11025,7 +11025,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -11149,9 +11149,9 @@
         "disjunctive": "all"
       },
       "uid": "(kk4t2(ISAR",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11530,7 +11530,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -11617,9 +11617,9 @@
         "disjunctive": "all"
       },
       "uid": "Xe0umiWNqXa",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -11997,7 +11997,7 @@
       "parent": "Dynamic Effects - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -12063,9 +12063,9 @@
         "disjunctive": "any"
       },
       "uid": "YmNEGeTwhkb",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -12208,7 +12208,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "BOTTOM",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": {
         "Ancestral Guidance": false,
@@ -12275,9 +12275,9 @@
         }
       ],
       "uid": "5OrCag44X1D",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -12516,7 +12516,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -12640,9 +12640,9 @@
         "disjunctive": "any"
       },
       "uid": "F1OBy2nCK94",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -12883,7 +12883,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -13052,9 +13052,9 @@
         "disjunctive": "custom"
       },
       "uid": "HISKE)bkl(H",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13324,7 +13324,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -13549,9 +13549,9 @@
         "disjunctive": "any"
       },
       "uid": "lApigDnejMG",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -13765,7 +13765,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -13886,9 +13886,9 @@
         "disjunctive": "any"
       },
       "uid": "TiA1VyRPhws",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14113,7 +14113,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -14217,9 +14217,9 @@
         "disjunctive": "any"
       },
       "uid": "tuxSgp7SA3g",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14414,7 +14414,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -14500,9 +14500,9 @@
         "disjunctive": "any"
       },
       "uid": "xo(DqS95rlr",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14697,7 +14697,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -14784,9 +14784,9 @@
         "disjunctive": "any"
       },
       "uid": "7C55R0Idb4S",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -14947,7 +14947,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -15035,9 +15035,9 @@
         "disjunctive": "any"
       },
       "uid": "eEN1k7YzXmI",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -15351,7 +15351,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -15526,9 +15526,9 @@
         "disjunctive": "any"
       },
       "uid": "RyxJ3u84jFF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -15758,7 +15758,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -15887,9 +15887,9 @@
         "disjunctive": "any"
       },
       "uid": "D3K6FpE8DA7",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16119,7 +16119,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -16248,9 +16248,9 @@
         "disjunctive": "any"
       },
       "uid": "Sh(pGtAX8N6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16478,7 +16478,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -16610,9 +16610,9 @@
         "disjunctive": "any"
       },
       "uid": "u1lJcSHTXk)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -16802,7 +16802,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -16909,9 +16909,9 @@
         "disjunctive": "any"
       },
       "uid": "jx9N5t91vcD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -17141,7 +17141,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -17270,9 +17270,9 @@
         "disjunctive": "any"
       },
       "uid": "K6tPPrmLaVa",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -17731,7 +17731,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -17873,9 +17873,9 @@
         "disjunctive": "any"
       },
       "uid": "quHatVIrHP2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18127,7 +18127,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -18272,9 +18272,9 @@
         "disjunctive": "any"
       },
       "uid": "a0pof7yw6w(",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18542,7 +18542,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -18715,9 +18715,9 @@
         "disjunctive": "any"
       },
       "uid": "BWjhHwis97R",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -18957,7 +18957,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -19104,9 +19104,9 @@
         "disjunctive": "any"
       },
       "uid": "YnT645Y(XVH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19322,7 +19322,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -19457,9 +19457,9 @@
         "disjunctive": "any"
       },
       "uid": "6lb)8u72Z(u",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19642,7 +19642,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -19765,9 +19765,9 @@
         "disjunctive": "any"
       },
       "uid": "WVxrGSirDqj",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -19985,7 +19985,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -20074,9 +20074,9 @@
         "disjunctive": "any"
       },
       "uid": "xkjkjjvBDFg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -20334,7 +20334,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -20486,9 +20486,9 @@
         "disjunctive": "custom"
       },
       "uid": "tp24scFGqNF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -20746,7 +20746,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -20880,9 +20880,9 @@
         "disjunctive": "any"
       },
       "uid": "ZP6EsZf)Qj9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -21121,7 +21121,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -21279,9 +21279,9 @@
         "disjunctive": "any"
       },
       "uid": "O05erGveHaY",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -21447,7 +21447,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -21516,9 +21516,9 @@
         "activeTriggerMode": -10
       },
       "uid": "v1dKJaswBFk",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -21753,7 +21753,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -21899,9 +21899,9 @@
         "disjunctive": "any"
       },
       "uid": "WMleweqhZ5w",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22062,7 +22062,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -22150,9 +22150,9 @@
         "disjunctive": "any"
       },
       "uid": "HtzSiO6sMjF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22313,7 +22313,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -22402,9 +22402,9 @@
         "disjunctive": "any"
       },
       "uid": "zYcMDwOmVtB",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22594,7 +22594,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -22701,9 +22701,9 @@
         "disjunctive": "any"
       },
       "uid": "ewSg5MhH(cU",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -22943,7 +22943,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -23090,9 +23090,9 @@
         "disjunctive": "any"
       },
       "uid": "LXqqLPmGs5z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -23343,7 +23343,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -23471,9 +23471,9 @@
         "disjunctive": "any"
       },
       "uid": "kjtqgaErOBF",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -23810,7 +23810,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -23972,9 +23972,9 @@
         "disjunctive": "any"
       },
       "uid": "RZGNpuPb7yv",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -24149,7 +24149,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -24228,9 +24228,9 @@
         "disjunctive": "any"
       },
       "uid": "hYqhDIMFV9d",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -24449,7 +24449,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -24575,9 +24575,9 @@
         "disjunctive": "any"
       },
       "uid": "9Sijs6FZoQE",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -25044,7 +25044,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -25157,9 +25157,9 @@
         "disjunctive": "any"
       },
       "uid": "toA7xoJBAiy",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -25394,7 +25394,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -25540,9 +25540,9 @@
         "disjunctive": "any"
       },
       "uid": "6cyF7kMGJ(Y",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -25770,7 +25770,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -25912,9 +25912,9 @@
         "disjunctive": "any"
       },
       "uid": "mcDoz0GrE7K",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -26104,7 +26104,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -26211,9 +26211,9 @@
         "disjunctive": "any"
       },
       "uid": "CDMZD3fMA5C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -26376,7 +26376,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -26489,9 +26489,9 @@
         "disjunctive": "any"
       },
       "uid": "16JNieKB6Q2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -26672,7 +26672,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -26883,9 +26883,9 @@
         "disjunctive": "any"
       },
       "uid": "D2Gqm1Viluf",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -27311,7 +27311,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -27399,9 +27399,9 @@
         "disjunctive": "any"
       },
       "uid": "YsAVFynTS)(",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -27823,7 +27823,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -27892,9 +27892,9 @@
         "activeTriggerMode": -10
       },
       "uid": "NrIYbkpGeGm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -28006,7 +28006,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOPRIGHT",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -28030,9 +28030,9 @@
         }
       ],
       "uid": "RpFpJXVg7fu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -28128,7 +28128,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOPLEFT",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -28152,9 +28152,9 @@
         }
       ],
       "uid": "H)1hJveFxZ)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 0
@@ -28282,7 +28282,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -28306,9 +28306,9 @@
         }
       ],
       "uid": "QWjdiQVgBgl",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": -0.00006103515625,
       "yOffset": 2
@@ -28766,7 +28766,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -28861,9 +28861,9 @@
         "disjunctive": "custom"
       },
       "uid": "ja3j)xst2SC",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -29326,7 +29326,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -29421,9 +29421,9 @@
         "disjunctive": "custom"
       },
       "uid": "MravrZQ(qBT",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -29887,7 +29887,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -29982,9 +29982,9 @@
         "disjunctive": "custom"
       },
       "uid": "anFjYOXxXvc",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -30474,7 +30474,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -30587,9 +30587,9 @@
         "disjunctive": "custom"
       },
       "uid": "RF4gKzczYaO",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -31027,7 +31027,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -31122,9 +31122,9 @@
         "disjunctive": "custom"
       },
       "uid": "3(G4DhyPq(O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -31614,7 +31614,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -31727,9 +31727,9 @@
         "disjunctive": "custom"
       },
       "uid": "pxrb1qiA8cu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -32228,7 +32228,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -32360,9 +32360,9 @@
         "disjunctive": "custom"
       },
       "uid": "eLhxGiRt)Hf",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -32832,7 +32832,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -32948,9 +32948,9 @@
         "disjunctive": "custom"
       },
       "uid": "H6tbbgXB(E6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -33420,7 +33420,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -33536,9 +33536,9 @@
         "disjunctive": "custom"
       },
       "uid": "VKtlmRjE6xD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -34030,7 +34030,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -34125,9 +34125,9 @@
         "disjunctive": "custom"
       },
       "uid": "1UT0om(5IAq",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -34592,7 +34592,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -34706,9 +34706,9 @@
         "disjunctive": "custom"
       },
       "uid": "a)ue3hhArK8",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -35198,7 +35198,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -35328,9 +35328,9 @@
         "disjunctive": "any"
       },
       "uid": "c1K5KYyl6(A",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -35799,7 +35799,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -35941,9 +35941,9 @@
         "disjunctive": "custom"
       },
       "uid": "0dbsutw39Wm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -36443,7 +36443,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -36556,9 +36556,9 @@
         "disjunctive": "custom"
       },
       "uid": "uAERmptweWV",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -37031,7 +37031,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -37126,9 +37126,9 @@
         "disjunctive": "custom"
       },
       "uid": "Jkaji89qeW2",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -37566,7 +37566,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -37661,9 +37661,9 @@
         "disjunctive": "custom"
       },
       "uid": "8))8ZR)eiTA",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -38128,7 +38128,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -38241,9 +38241,9 @@
         "disjunctive": "custom"
       },
       "uid": ")DcLrRhqqtc",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -38708,7 +38708,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -38821,9 +38821,9 @@
         "disjunctive": "custom"
       },
       "uid": "iqMIL8l5LtN",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -39259,7 +39259,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -39354,9 +39354,9 @@
         "disjunctive": "custom"
       },
       "uid": "PVHySnqlK3C",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -39794,7 +39794,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -39889,9 +39889,9 @@
         "disjunctive": "custom"
       },
       "uid": "9ssEqZPW((q",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -40364,7 +40364,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -40506,9 +40506,9 @@
         "disjunctive": "custom"
       },
       "uid": "FYHKzkFYghM",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -40978,7 +40978,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -41120,9 +41120,9 @@
         "disjunctive": "custom"
       },
       "uid": "JWS1fkvXb1B",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -41592,7 +41592,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -41734,9 +41734,9 @@
         "disjunctive": "custom"
       },
       "uid": "BP1Re22NFtm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -42218,7 +42218,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -42348,9 +42348,9 @@
         "disjunctive": "custom"
       },
       "uid": "B1qJWqk9mXC",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -42820,7 +42820,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -42936,9 +42936,9 @@
         "disjunctive": "custom"
       },
       "uid": "beDAXvm4WPt",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -43407,7 +43407,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -43523,9 +43523,9 @@
         "disjunctive": "custom"
       },
       "uid": "H4swphgcL0r",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -44007,7 +44007,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -44137,9 +44137,9 @@
         "disjunctive": "custom"
       },
       "uid": ")yzFVsRrZ8G",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -44609,7 +44609,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -44751,9 +44751,9 @@
         "disjunctive": "custom"
       },
       "uid": "ONUMuVAYwEh",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -45223,7 +45223,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -45365,9 +45365,9 @@
         "disjunctive": "custom"
       },
       "uid": "pBe1zxrS60)",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -45837,7 +45837,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -45979,9 +45979,9 @@
         "disjunctive": "custom"
       },
       "uid": "rvwxbNpCi7l",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -46454,7 +46454,7 @@
       "parent": "Utilities - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -46596,9 +46596,9 @@
         "disjunctive": "custom"
       },
       "uid": "oqu)yZ0jSbQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -46697,7 +46697,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": [],
       "source": "import",
@@ -46721,9 +46721,9 @@
         }
       ],
       "uid": "EGzMxLejNbm",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -47231,7 +47231,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -47357,9 +47357,9 @@
         "disjunctive": "custom"
       },
       "uid": "dNeq505jlKS",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -47872,7 +47872,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -47998,9 +47998,9 @@
         "disjunctive": "custom"
       },
       "uid": "99qYAMXeAuj",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -48489,7 +48489,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -48634,9 +48634,9 @@
         "disjunctive": "custom"
       },
       "uid": "WHYVXxZkJs4",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -49125,7 +49125,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -49297,9 +49297,9 @@
         "disjunctive": "custom"
       },
       "uid": "F3SZ7QF0Yz9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -49788,7 +49788,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -49960,9 +49960,9 @@
         "disjunctive": "custom"
       },
       "uid": "JXOzka5GJ4j",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -50451,7 +50451,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -50623,9 +50623,9 @@
         "disjunctive": "custom"
       },
       "uid": "YiH9kld70qA",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -51114,7 +51114,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -51274,9 +51274,9 @@
         "disjunctive": "custom"
       },
       "uid": "diGZ5EJgl8Z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -51764,7 +51764,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -51911,9 +51911,9 @@
         "disjunctive": "custom"
       },
       "uid": "noAYUsJnqWz",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -52290,7 +52290,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -52393,9 +52393,9 @@
         "disjunctive": "all"
       },
       "uid": "18QyCeVNrGH",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -52764,7 +52764,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -52839,9 +52839,9 @@
         "activeTriggerMode": -10
       },
       "uid": "jQ1kGrh46i6",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -53210,7 +53210,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -53274,9 +53274,9 @@
         "activeTriggerMode": -10
       },
       "uid": "mzaKQE5dnSP",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -53782,7 +53782,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -53898,9 +53898,9 @@
         "disjunctive": "any"
       },
       "uid": "gIcAcd)Uk8O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -54406,7 +54406,7 @@
       "parent": "Left Side - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -54523,9 +54523,9 @@
         "disjunctive": "any"
       },
       "uid": "hLr752KNL)I",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -54619,7 +54619,7 @@
       "regionType": "group",
       "scale": 1,
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [],
       "tocversion": 100002,
@@ -54639,8 +54639,8 @@
         }
       ],
       "uid": "51(xfH4ZEsD",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
-      "version": 55,
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -55031,7 +55031,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -55143,10 +55143,10 @@
         "activeTriggerMode": 1
       },
       "uid": "fASSAy0(H6O",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -55367,7 +55367,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -55628,10 +55628,10 @@
         "disjunctive": "any"
       },
       "uid": "CJJ4wK3ccGu",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -55829,7 +55829,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -55936,10 +55936,10 @@
         "activeTriggerMode": 1
       },
       "uid": "EOFjJvczcg8",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -56040,7 +56040,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": {
         "Maelstrom Weapon 1": false,
@@ -56070,9 +56070,9 @@
         }
       ],
       "uid": "5yjzt)zsrW0",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -56257,7 +56257,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -56391,10 +56391,10 @@
         "disjunctive": "any"
       },
       "uid": "AyoaLbw(7om",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -56579,7 +56579,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -56713,10 +56713,10 @@
         "disjunctive": "any"
       },
       "uid": "8Ya4Vsu)bTQ",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -56901,7 +56901,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -57075,10 +57075,10 @@
         "disjunctive": "any"
       },
       "uid": "HYrtnXI65()",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -57263,7 +57263,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -57397,10 +57397,10 @@
         "disjunctive": "any"
       },
       "uid": "H(ak)vfFmNg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -57567,7 +57567,7 @@
       "parent": "Maelstrom Weapon - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -57701,10 +57701,10 @@
         "disjunctive": "any"
       },
       "uid": ")A9ArwZHxcp",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": true,
       "useAdjustededMin": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 65,
       "xOffset": 0,
@@ -57870,7 +57870,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -57993,10 +57993,10 @@
         "disjunctive": "any"
       },
       "uid": "d3E5AeBcseg",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -58094,7 +58094,7 @@
       "rowSpace": 1,
       "scale": 1,
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "sort": "none",
       "sortHybridTable": {
         "Lava Burst 1": false,
@@ -58121,9 +58121,9 @@
         }
       ],
       "uid": "P45R)teXF63",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useLimit": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "xOffset": 0,
       "yOffset": 0
@@ -58553,7 +58553,7 @@
       "parent": "Lava Burst - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -58672,10 +58672,10 @@
         "disjunctive": "any"
       },
       "uid": "1WH8TFTVy1z",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -59104,7 +59104,7 @@
       "parent": "Lava Burst - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": false,
@@ -59223,10 +59223,10 @@
         "disjunctive": "any"
       },
       "uid": "DPD1bDVV17h",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 56,
       "xOffset": 0,
@@ -59647,7 +59647,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": true,
       "source": "import",
       "spark": false,
@@ -59714,10 +59714,10 @@
         "activeTriggerMode": 1
       },
       "uid": "E18pl6tbGp9",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -60202,7 +60202,7 @@
       "parent": "Resources - LWA - Shaman",
       "regionType": "aurabar",
       "selfPoint": "TOP",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "smoothProgress": false,
       "source": "import",
       "spark": true,
@@ -60374,10 +60374,10 @@
         "disjunctive": "any"
       },
       "uid": "V0BPv(KUpQW",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useAdjustededMax": false,
       "useAdjustededMin": false,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 405,
       "xOffset": 0,
@@ -60838,7 +60838,7 @@
       "parent": "Core - LWA - Shaman",
       "regionType": "icon",
       "selfPoint": "CENTER",
-      "semver": "3.0.15",
+      "semver": "3.0.16",
       "source": "import",
       "subRegions": [
         {
@@ -60924,9 +60924,9 @@
         "disjunctive": "any"
       },
       "uid": "K5gNju3JISo",
-      "url": "https://wago.io/LuxthosShamanDragonflight/55",
+      "url": "https://wago.io/LuxthosShamanDragonflight/56",
       "useCooldownModRate": true,
-      "version": 55,
+      "version": 56,
       "wagoID": "Hkc9ktj4X",
       "width": 48,
       "xOffset": 0,
@@ -61020,7 +61020,7 @@
     "regionType": "group",
     "scale": 1.2,
     "selfPoint": "CENTER",
-    "semver": "3.0.15",
+    "semver": "3.0.16",
     "source": "import",
     "subRegions": [],
     "tocversion": 100002,
@@ -61040,8 +61040,8 @@
       }
     ],
     "uid": "oxNB7E4Uhm4",
-    "url": "https://wago.io/LuxthosShamanDragonflight/55",
-    "version": 55,
+    "url": "https://wago.io/LuxthosShamanDragonflight/56",
+    "version": 56,
     "wagoID": "Hkc9ktj4X",
     "xOffset": 0,
     "yOffset": -144.5
